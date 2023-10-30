@@ -1,0 +1,61 @@
+@extends('v_landing.layouts.main')
+
+@section('home')
+  <div class="parallax"></div>
+
+      <div class="card position-absolute top-40 start-50 translate-middle px-5" style="border-color: #e60000; border-width: 2px">
+        <div class="card-body text-center">
+          <p class="card-text fs-1 fw-bold pb-0 mb-0">UDD PMI JAWA TENGAH</p>
+          <h6 class="text-secondary" style="font-size: 0.8em">Teteskan <span class="text-decoration-underline" style="color: #e60000">darah kini,</span> untuk mereka yang <span class="text-decoration-underline" style="color: #e60000">membutuhkan nanti.</span></h6>
+        </div>
+      </div>
+
+      <div class="" style="height:150px; background-color: #fafafa;">
+          
+  </div>
+    
+@endsection
+
+@section('jadwalmu')
+  <div class="container" style="height:1500px;">
+
+    <h2 class="fw-bold fs-2 text-center" style="padding-top: 6.5rem"> JADWAL <span style="color: #e60000">MOBILE UNIT</span> </h2>
+    <h6 class="text-center mb-4" style="font-size: 0.8em;">Jadwal Donor Mobile Unit UDD h6MI Se Jateng (Tanggal 16-June-2023)</h6>
+
+    <div class="row justify-content-center ">
+      <div class="col-lg-6">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control form-control-sm" placeholder="Search ..." name="search" value="{{ request('search') }}">
+          <button class="btn btn-sm text-white" style="background-color: #e60000" type="submit" id="">Search</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="table-responsive-lg">
+      <table class="table table-striped table-hover table-sm table-bordered" style="font-size: 0.8em">
+          <thead class="text-center text-white" style="background-color: #cc0000">
+            <tr>
+                <th class="py-3 px-1" scope="col">No</th>
+                <th class="col-lg-2 py-3 px-1" scope="col">UDD PMI - Tempat</th>
+                <th class="py-3 px-1" scope="col">ALAMAT</th>
+                <th class="col-lg-1 py-3 px-1" scope="col">JAM MULAI</th>
+                <th class="col-lg-1 py-3 px-1" scope="col">JAM SELESAI</th>
+                <th class="py-3 px-1" scope="col">PERUNTUKAN</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+                <th scope="row" class="text-center">1</th>
+                <td>UDD PMI Kota Semarang</td>
+                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias commodi ipsam voluptatibus nihil, id aspernatur?</td>
+                <td class="text-center">19:30</td>
+                <td class="text-center">23:59</td>
+                <td class="text-center">Umum</td>
+            </tr>
+          </tbody>
+      </table>
+    </div>
+  </div>
+
+
+@endsection

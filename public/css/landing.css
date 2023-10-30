@@ -1,0 +1,160 @@
+:root {
+    --primary: #e60000;
+    --darkprimary: #cc0000;
+    --bg: #fafafa;
+}
+
+* {
+    font-family: "Poppins", sans-serif;
+}
+
+section {
+    background-color: #fafafa;
+}
+
+.parallax {
+    /* The image used */
+    background-image: url("/img/bg-udd-dark.jpg");
+  
+    /* Set a specific height */
+    min-height: 540px; 
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.navbar_ {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 10%; 
+    background-color: rgba(255, 255, 255, 0.8);
+    border-bottom: 3px solid var(--primary);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 9999;
+}
+
+/* Image */
+.navbar_ img {
+    width: 6.5rem;
+}
+
+/* Navbar-nav */
+.navbar_ .navbar-nav_ a {
+    color: #252525;
+    display: inline-block;
+    font-size: 0.9rem;
+    margin: 0 0.6rem;
+    font-family: "Poppins", sans-serif;
+    color: #252525;
+    text-decoration: none;
+    font-size: 0.7em;
+}
+
+.navbar_ .navbar-nav_ a:hover {
+    color: var(--primary);
+}
+
+.navbar_ .navbar-nav_ a::after {
+    content: "";
+    display: block;
+    padding-bottom: 0, 5rem;
+    border-bottom: 0.1rem solid var(--primary);
+    transform: scaleX(0);
+    transition: 0.2s linear;
+}
+
+.navbar_ .navbar-nav_ a:hover::after {
+    transform: scaleX(0.5);
+}
+
+/* Navbar-extra */
+.navbar_ .navbar-extra_ .cta {
+    display: inline-block;
+    padding: 0.7rem 2.5rem;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: var(--primary);
+    border-radius: 0.3rem;
+    box-shadow: 1px 1px 3px rgba (1, 1, 3, 0.5);
+}
+
+.navbar_ .navbar-extra_ .cta:hover {
+    color: #ffffff;
+}
+
+.navbar_ .navbar-extra_ a {
+    color: #252525;
+}
+
+.navbar_ .navbar-extra_ a:hover {
+    color: var(--primary);
+}
+
+#hamburger-menu {
+    display: none;
+}
+
+
+
+
+/* Tablet */
+@media (max-width: 890px) {
+    img {
+        size: 65%;
+    }
+    #hamburger-menu {
+        display: inline-block;
+    }
+    .navbar_ .navbar-nav_ {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background-color: #252525;
+        width: 15rem;
+        height: 100vh;
+        transition: 0.3s;
+    }
+
+    .navbar_ .navbar-nav_.active {
+        right: 0;
+    }
+
+    .navbar_ .navbar-nav_ a {
+        color: #fff;
+        display: block;
+        margin: 1.5rem;
+        padding: 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    .navbar_ .navbar-nav_ a::after {
+        transform-origin: 0 0;
+    }
+
+    .navbar_ .navbar-nav_ a:hover::after {
+        transform: scaleX(0.2);
+    }
+
+    .navbar_ .navbar-extra_ a {
+        margin: 0 2rem;
+    }
+
+    .navbar_ .navbar-extra_ {
+        display: flex;
+        align-items: end;
+    }
+
+    .hero .content {
+        margin-left: 40%;
+        padding: 1.4rem 3%;
+        font-size: 1em;
+        max-width: 40rem;
+    }
+}
