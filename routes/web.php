@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AlamatUDDController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('v_landing.index');
-});
+Route::get('/', [AlamatUDDController::class, 'index']);

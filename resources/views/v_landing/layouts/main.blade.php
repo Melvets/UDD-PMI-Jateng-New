@@ -40,6 +40,18 @@
       @yield('jadwalmu')
       
     </section>
+
+    <section id="stokdarah">
+
+      @yield('stokdarah')
+
+    </section>
+
+    <section id="alamatudd">
+
+      @yield('alamatudd')
+    
+    </section>
     
 
 
