@@ -1,6 +1,8 @@
 <?php
 
-use App\Http\Controllers\AlamatUDDController;
+use App\Models\JadwalMU;
+use App\Models\AlamatUDD;
+use App\Models\StokDarah;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,4 +16,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [AlamatUDDController::class, 'index']);
+Route::get('/', function() {
+    return view ('v_landing.index', [
+        'dataAlamatUDD' => AlamatUDD::all(),
+        'dataStokDarah' => StokDarah::all(),
+        'dataJadwalMU' => JadwalMU::all()
+    ]);
+});

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\AlamatUDD;
+use App\Models\StokDarah;
 use Illuminate\Http\Request;
 
-class AlamatUDDController extends Controller
+class StokDarahController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class AlamatUDDController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\AlamatUDD  $alamatUDD
+     * @param  \App\Models\StokDarah  $stokDarah
      * @return \Illuminate\Http\Response
      */
-    public function show(AlamatUDD $alamatUDD)
+    public function show(StokDarah $stokDarah)
     {
         //
     }
@@ -52,10 +52,10 @@ class AlamatUDDController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\AlamatUDD  $alamatUDD
+     * @param  \App\Models\StokDarah  $stokDarah
      * @return \Illuminate\Http\Response
      */
-    public function edit(AlamatUDD $alamatUDD)
+    public function edit(StokDarah $stokDarah)
     {
         //
     }
@@ -64,10 +64,10 @@ class AlamatUDDController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\AlamatUDD  $alamatUDD
+     * @param  \App\Models\StokDarah  $stokDarah
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, AlamatUDD $alamatUDD)
+    public function update(Request $request, StokDarah $stokDarah)
     {
         //
     }
@@ -75,10 +75,10 @@ class AlamatUDDController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\AlamatUDD  $alamatUDD
+     * @param  \App\Models\StokDarah  $stokDarah
      * @return \Illuminate\Http\Response
      */
-    public function destroy(AlamatUDD $alamatUDD)
+    public function destroy(StokDarah $stokDarah)
     {
         //
     }

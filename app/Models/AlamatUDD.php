@@ -7,8 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class AlamatUDD extends Model
 {
+    use HasFactory;
+
     protected $table = "alamatudd";
     protected $guarded = ['id_alamatudd'];
 
-    use HasFactory;
 }
