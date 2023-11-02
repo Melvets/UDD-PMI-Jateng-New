@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use App\Models\JadwalMU;
 use App\Models\AlamatUDD;
 use App\Models\StokDarah;
@@ -23,3 +24,5 @@ Route::get('/', function() {
         'dataJadwalMU' => JadwalMU::all()
     ]);
 });
+
+Route::get('/login', [LoginController::class, 'index']);

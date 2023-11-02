@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\AlamatUDD;
 use App\Models\StokDarah;
 use App\Models\JadwalMU;
+use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -87,6 +88,22 @@ class DatabaseSeeder extends Seeder
             'jam_mulai' => '23:30',
             'jam_selesai' => '24:00',
             'peruntukan' => 'Umum',
+        ]);
+
+        User::create([
+            'nama' => 'Camela Devs',
+            'username' => 'meldsvt',
+            'email' => 'camelaputri1@gmail.com',
+            'alamatudd_id' => '1',
+            'password' => bcrypt('punyaamel8'),
+        ]);
+
+        User::create([
+            'nama' => 'Muhammad Nazril Ilham',
+            'username' => 'dnotnut',
+            'email' => 'ilhamjepara@gmail.com',
+            'alamatudd_id' => '2',
+            'password' => bcrypt('dnotnut'),
         ]);
     }
 }
