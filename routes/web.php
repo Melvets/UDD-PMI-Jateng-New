@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegistrasiController;
 use App\Models\JadwalMU;
 use App\Models\AlamatUDD;
 use App\Models\StokDarah;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,4 +27,15 @@ Route::get('/', function() {
     ]);
 });
 
-Route::get('/login', [LoginController::class, 'index']);
+// Registrasi
+Route::get('/register', [RegistrasiController::class, 'index']);
+Route::post('/register', [RegistrasiController::class, 'store']);
+
+// Login
+Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
+Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'logout']);
+
+Route::get('/dashboard', function() {
+    return view('v_dashboard.index');
+})->middleware('auth');

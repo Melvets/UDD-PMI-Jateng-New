@@ -91,7 +91,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         User::create([
-            'nama' => 'Camela Devs',
+            'name' => 'Camela Devs',
             'username' => 'meldsvt',
             'email' => 'camelaputri1@gmail.com',
             'alamatudd_id' => '1',
@@ -99,7 +99,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         User::create([
-            'nama' => 'Muhammad Nazril Ilham',
+            'name' => 'Muhammad Nazril Ilham',
             'username' => 'dnotnut',
             'email' => 'ilhamjepara@gmail.com',
             'alamatudd_id' => '2',

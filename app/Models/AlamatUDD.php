@@ -12,4 +12,8 @@ class AlamatUDD extends Model
     protected $table = "alamatudd";
     protected $guarded = ['id_alamatudd'];
 
+    public function User()
+    {
+        return $this->hasOne(User::class, 'alamatudd_id', 'id');
+    }
 }
