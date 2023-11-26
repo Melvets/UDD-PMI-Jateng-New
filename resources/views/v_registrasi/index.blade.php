@@ -63,9 +63,9 @@
                             <div class="mb-3">
                                 <label for="alamatudd_id" class="form-label">UDD Kabkot</label>
                                 <select class="form-select" aria-label="Default select example" name="alamatudd_id" id="alamatudd_id">
-                                    <option value="{{ $dataAlamatUDD[0]->id_alamatudd }}" selected>{{ $dataAlamatUDD[0]->udd_kabkot }}</option>
+                                    <option value="{{ $dataAlamatUDD[0]->id }}" selected>{{ $dataAlamatUDD[0]->udd_kabkot }}</option>
                                     @foreach ($dataAlamatUDD->skip(1) as $data)
-                                        <option value="{{ $data->id_alamatudd }}">{{ $data->udd_kabkot }}</option>
+                                        <option value="{{ $data->id }}">{{ $data->udd_kabkot }}</option>
                                     @endforeach
                                 </select>
                             </div>

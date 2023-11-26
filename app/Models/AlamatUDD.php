@@ -10,7 +10,7 @@ class AlamatUDD extends Model
     use HasFactory;
 
     protected $table = "alamatudd";
-    protected $guarded = ['id_alamatudd'];
+    protected $guarded = ['id'];
 
     public function User()
     {

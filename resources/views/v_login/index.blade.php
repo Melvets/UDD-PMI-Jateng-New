@@ -52,7 +52,7 @@
                         <small class="d-block text-center mt-3 mb-5">Not registed? <a href="/register">Register Now!</a></small>
 
                     </div>
-                  </div>
+                </div>
                 
             </div>
         </div>
@@ -64,13 +64,13 @@
                 {{ session('success') }}
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
-        @endif
+    @endif
 
-        @if(session()->has('loginError'))
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                {{ session('loginError') }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        @endif
+    @if(session()->has('loginError'))
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{ session('loginError') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
 
 @endsection

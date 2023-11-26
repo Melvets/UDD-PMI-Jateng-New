@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegistrasiController;
+use App\Http\Controllers\DashboardController;
 use App\Models\JadwalMU;
 use App\Models\AlamatUDD;
 use App\Models\StokDarah;
@@ -36,6 +37,8 @@ Route::get('/login', [LoginController::class, 'index'])->name('login')->middlewa
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
-Route::get('/dashboard', function() {
-    return view('v_dashboard.index');
-})->middleware('auth');
+// Dashboard
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
+// Route::get('/dashboard', function() {
+//     return view('v_dashboard.index');
+// })->middleware('auth');

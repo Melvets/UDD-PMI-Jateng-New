@@ -10,10 +10,10 @@ class JadwalMU extends Model
     use HasFactory;
 
     protected $table = "jadwalmu";
-    protected $guarded = ['id_jadwalmu'];
+    protected $guarded = ['id'];
 
     public function AlamatUDD()
     {
-        return $this->belongsTo(AlamatUDD::class, 'alamat_id', 'id_alamatudd');
+        return $this->belongsTo(AlamatUDD::class, 'alamat_id', 'id');
     }
 }

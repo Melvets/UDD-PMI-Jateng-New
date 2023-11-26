@@ -17,6 +17,9 @@
 @endsection
 
 @section('jadwalmu')
+{{-- @auth
+  <h1 class="h2">Welcome Back, {{ auth()->user()->name }}</h1>
+@endauth --}}
   <div class="container" style="height:1500px;">
 
     <h2 class="fw-bold fs-2 text-center" style="padding-top: 6.5rem"> JADWAL <span style="color: #e60000">MOBILE UNIT</span> </h2>
