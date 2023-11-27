@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-* Tabler - Premium and Open Source dashboard template with responsive and high quality UI.
+* Tabler - Premium and Open Source dashboard /template with responsive and high quality UI.
 * @version 1.0.0-beta19
 * @link https://tabler.io
 * Copyright 2018-2023 The Tabler Authors
@@ -21,26 +21,28 @@
     <meta name="mobile-web-app-capable" content="yes"/>
     <meta name="HandheldFriendly" content="True"/>
     <meta name="MobileOptimized" content="320"/>
-    <link rel="icon" href="template/favicon.ico" type="image/x-icon"/>
-    <link rel="shortcut icon" href="template/favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="/template/favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="/template/favicon.ico" type="image/x-icon"/>
     <meta name="description" content="Tabler comes with tons of well-designed components and features. Start your adventure with Tabler and make your dashboard great again. For free!"/>
     <meta name="canonical" content="https://preview.tabler.io/layout-combo.html">
     <meta name="twitter:image:src" content="https://preview.tabler.io/static/og.png">
     <meta name="twitter:site" content="@tabler_ui">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Tabler: Premium and Open Source dashboard template with responsive and high quality UI.">
+    <meta name="twitter:title" content="Tabler: Premium and Open Source dashboard /template with responsive and high quality UI.">
     <meta name="twitter:description" content="Tabler comes with tons of well-designed components and features. Start your adventure with Tabler and make your dashboard great again. For free!">
     <meta property="og:image" content="https://preview.tabler.io/static/og.png">
     <meta property="og:image:width" content="1280">
     <meta property="og:image:height" content="640">
     <meta property="og:site_name" content="Tabler">
     <meta property="og:type" content="object">
-    <meta property="og:title" content="Tabler: Premium and Open Source dashboard template with responsive and high quality UI.">
+    <meta property="og:title" content="Tabler: Premium and Open Source dashboard /template with responsive and high quality UI.">
     <meta property="og:url" content="https://preview.tabler.io/static/og.png">
     <meta property="og:description" content="Tabler comes with tons of well-designed components and features. Start your adventure with Tabler and make your dashboard great again. For free!">
     <!-- CSS files -->
-    <link href="template/dist/css/tabler.min.css?1685973381" rel="stylesheet"/>
-    <link href="template/dist/css/demo.min.css?1685973381" rel="stylesheet"/>
+    <link href="/template/dist/css/tabler.min.css?1685973381" rel="stylesheet"/>
+    <link href="/template/dist/css/demo.min.css?1685973381" rel="stylesheet"/>
+    <!-- Icons -->
+    <script src="https://kit.fontawesome.com/9c45ff2d1a.js" crossorigin="anonymous"></script>
     <style>
       @import url('https://rsms.me/inter/inter.css');
       :root {
@@ -54,7 +56,7 @@
 
   <body >
     {{-- Dark/Light Mode --}}
-    <script src="template/dist/js/demo-theme.min.js?1685973381"></script>
+    <script src="/template/dist/js/demo-theme.min.js?1685973381"></script>
 
     <div class="page">
 
@@ -68,7 +70,7 @@
           {{-- Logo =========================================================================================================================== --}}
           <h1 class="navbar-brand navbar-brand-autodark">
             <a href=".">
-              <img src="template/static/logo.svg" width="110" height="32" alt="Tabler" class="navbar-brand-image">
+              <img src="/template/static/logo.svg" width="110" height="32" alt="Tabler" class="navbar-brand-image">
             </a>
           </h1>
 
@@ -123,7 +125,7 @@
             {{-- Profile =========================================================================================================================== --}} 
             <div class="nav-item dropdown">
               <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown" aria-label="Open user menu">
-                <span class="avatar avatar-sm" style="background-image: url(template/static/avatars/000m.jpg)"></span>
+                <span class="avatar avatar-sm" style="background-image: url(/template/static/avatars/000m.jpg)"></span>
                 <div class="d-none d-xl-block ps-2">
                   <div>{{ auth()->user()->name }}</div>
                   <div class="mt-1 small text-secondary">UI Designer</div>
@@ -131,10 +133,10 @@
               </a>
               <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                 <a href="#" class="dropdown-item">Status</a>
-                <a href="template/profile.html" class="dropdown-item">Profile</a>
+                <a href="/template/profile.html" class="dropdown-item">Profile</a>
                 <a href="#" class="dropdown-item">Feedback</a>
                 <div class="dropdown-divider"></div>
-                <a href="template/settings.html" class="dropdown-item">Settings</a>
+                <a href="/template/settings.html" class="dropdown-item">Settings</a>
 
                 <form action="/logout" method="POST">
 
@@ -152,7 +154,7 @@
           {{-- Search =========================================================================================================================== --}}
           <div class="collapse navbar-collapse" id="navbar-menu">
             <div>
-              <form action="template/" method="get" autocomplete="off" novalidate>
+              <form action="/template/" method="get" autocomplete="off" novalidate>
                 <div class="input-icon">
                   <span class="input-icon-addon">
                     <!-- Download SVG icon from http://tabler-icons.io/i/search -->
@@ -291,13 +293,13 @@
     </div>
 
     <!-- Libs JS -->
-    <script src="template/dist/libs/apexcharts/dist/apexcharts.min.js?1685973381" defer></script>
-    <script src="template/dist/libs/jsvectormap/dist/js/jsvectormap.min.js?1685973381" defer></script>
-    <script src="template/dist/libs/jsvectormap/dist/maps/world.js?1685973381" defer></script>
-    <script src="template/dist/libs/jsvectormap/dist/maps/world-merc.js?1685973381" defer></script>
+    <script src="/template/dist/libs/apexcharts/dist/apexcharts.min.js?1685973381" defer></script>
+    <script src="/template/dist/libs/jsvectormap/dist/js/jsvectormap.min.js?1685973381" defer></script>
+    <script src="/template/dist/libs/jsvectormap/dist/maps/world.js?1685973381" defer></script>
+    <script src="/template/dist/libs/jsvectormap/dist/maps/world-merc.js?1685973381" defer></script>
     <!-- Tabler Core -->
-    <script src="template/dist/js/tabler.min.js?1685973381" defer></script>
-    <script src="template/dist/js/demo.min.js?1685973381" defer></script>
+    <script src="/template/dist/js/tabler.min.js?1685973381" defer></script>
+    <script src="/template/dist/js/demo.min.js?1685973381" defer></script>
 
   </body>
 </html>

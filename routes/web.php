@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AlamatUDDController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegistrasiController;
 use App\Http\Controllers\DashboardController;
@@ -39,6 +40,7 @@ Route::post('/logout', [LoginController::class, 'logout']);
 
 // Dashboard
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
-// Route::get('/dashboard', function() {
-//     return view('v_dashboard.index');
-// })->middleware('auth');
+
+// Dashboard (AlamatUDD)
+Route::resource('/dashboard/alamatudd', AlamatUDDController::class)->middleware('auth');
+
