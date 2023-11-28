@@ -10,18 +10,28 @@ class AlamatUDDController extends Controller
     public function index()
     {
         return view('v_dashboard.alamatudd.index', [
-            'dataAlamatUDD' => AlamatUDD::where('id', auth()->user()->alamatudd_id)->get()
+            // 'dataAlamatUDD' => AlamatUDD::where('id', auth()->user()->alamatudd_id)->get()
+            'dataAlamatUDD' => AlamatUDD::all()
         ]);
     }
 
     public function create()
     {
-        //
+        return view('v_dashboard.alamatudd.create');
     }
 
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'udd_kabkot' => 'required|unique:alamatudd',
+            'alamat' => 'required',
+            'telp' => 'required',
+            'email' => 'required|email:dns'
+        ]);
+
+        AlamatUDD::create($validatedData);
+
+        return redirect('/dashboard/alamatudd')->with('success', 'Data berhasil dibuat!');
     }
 
     public function show(AlamatUDD $alamatUDD)
@@ -29,21 +39,39 @@ class AlamatUDDController extends Controller
         //
     }
 
-    public function edit(AlamatUDD $alamatUDD)
+    public function edit(AlamatUDD $alamatUDD, $id)
     {
+        // dd($alamatUDD, AlamatUDD::find($id));
+
         return view('v_dashboard.alamatudd.edit', [
-            'dataAlamatUDD' => $alamatUDD,
-            
+            'dataAlamatUDD' => AlamatUDD::find($id),
         ]);
     }
 
-    public function update(Request $request, AlamatUDD $alamatUDD)
+    public function update(Request $request, AlamatUDD $alamatUDD, $id)
     {
-        //
+        $alamatUDD = AlamatUDD::find($id);
+
+        $validatedData = $request->validate([
+            'udd_kabkot' => 'required|unique:alamatudd',
+            'alamat' => 'required',
+            'telp' => 'required',
+            'email' => 'required|email:dns'
+        ]);
+
+        // dd($validatedData);
+
+        AlamatUDD::where('id', $alamatUDD->id)->update($validatedData);
+
+        return redirect('/dashboard/alamatudd')->with('success', 'Data berhasil diupdate!');
     }
 
-    public function destroy(AlamatUDD $alamatUDD)
+    public function destroy(AlamatUDD $alamatUDD, $id)
     {
-        //
+        $alamatUDD = AlamatUDD::find($id);
+
+        AlamatUDD::destroy($alamatUDD->id);
+
+        return redirect('/dashboard/alamatudd')->with('success', 'Data berhasil dihapus!');
     }
 }

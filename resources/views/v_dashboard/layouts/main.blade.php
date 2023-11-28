@@ -44,6 +44,13 @@
     <!-- Icons -->
     <script src="https://kit.fontawesome.com/9c45ff2d1a.js" crossorigin="anonymous"></script>
     <style>
+
+      :root {
+          --primary: #e60000;
+          --darkprimary: #cc0000;
+          --bg: #fafafa;
+      }
+
       @import url('https://rsms.me/inter/inter.css');
       :root {
         --tblr-font-sans-serif: 'Inter Var', -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif;
@@ -61,17 +68,19 @@
     <div class="page">
 
       <!-- Sidebar -->
-      <aside class="navbar navbar-vertical navbar-expand-lg" data-bs-theme="dark">
+      <aside class="navbar navbar-vertical navbar-expand-lg">
         <div class="container-fluid">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar-menu" aria-controls="sidebar-menu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
 
           {{-- Logo =========================================================================================================================== --}}
-          <h1 class="navbar-brand navbar-brand-autodark">
-            <a href=".">
-              <img src="/template/static/logo.svg" width="110" height="32" alt="Tabler" class="navbar-brand-image">
-            </a>
+          <h1 class="navbar-brand">
+            <img src="/img/PMI1.png" style="width: 3rem; height: 3rem" class="navbar-brand-image mb-3">
+            <div class="d-block">
+              <span style="font-weight: 1000">UDD <span style="color: #e60000">PMI</span></span> 
+              <p>Jawa Tengah</p>
+            </div>
           </h1>
 
           <div class="navbar-nav flex-row d-lg-none">

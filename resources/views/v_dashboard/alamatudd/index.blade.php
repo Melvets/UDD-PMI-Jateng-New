@@ -13,19 +13,15 @@
     </div>
 
     <!-- Page title actions -->
-    {{-- <div class="col-auto ms-auto d-print-none">
+    <div class="col-auto ms-auto d-print-none">
       <div class="btn-list">
-        <a href="#" class="btn btn-primary d-none d-sm-inline-block" data-bs-toggle="modal" data-bs-target="#modal-report">
+        <a href="/dashboard/alamatudd/create" class="btn d-none d-sm-inline-block text-white" style="background-color: #e60000">
           <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
           <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5l0 14" /><path d="M5 12l14 0" /></svg>
-          Create new report
-        </a>
-        <a href="#" class="btn btn-primary d-sm-none btn-icon" data-bs-toggle="modal" data-bs-target="#modal-report" aria-label="Create new report">
-          <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5l0 14" /><path d="M5 12l14 0" /></svg>
+          Create New Data
         </a>
       </div>
-    </div> --}}
+    </div>
 
   </div>
 </div>
@@ -81,9 +77,15 @@
                   <td>{{ $data->alamat }}</td>
                   <td>{{ $data->telp }}</td>
                   <td>{{ $data->email }}</td>
-                  <td>
-                    <a href="/dashboard/{{ $data->id }}/edit" class="btn btn-default text-green btn-md shadow rounded-2 p-2" title="update"><i class="fas fa-pen"></i></a>
-                    <button class="btn btn-default text-red btn-md shadow rounded-2 p-2" onclick=""> <i class="fas fa-trash"></i> </button>
+                  <td class="d-flex">
+                    <a href="/dashboard/alamatudd/{{ $data->id }}/edit" class="btn btn-default text-green btn-md shadow rounded-2 p-2" title="update"><i class="fas fa-pen"></i></a>
+                    <form action="/dashboard/alamatudd/{{ $data->id }}" method="POST">
+                      
+                      @method('delete')
+                      @csrf
+                      
+                      <button class="btn btn-default text-red btn-md shadow rounded-2 p-2" onclick="return confirm('Apakah Anda yakin?')"> <i class="fas fa-trash"></i> </button>
+                    </form>
                   </td>
               </tr>
 
