@@ -1,0 +1,33 @@
+:root {
+    --primary: #e60000;
+    --darkprimary: #cc0000;
+    --bg: #fafafa;
+}
+
+.side-link-title_ {
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.active-side {
+    background-color: rgba(230, 0, 0, 0.1);
+}
+
+.side-link-title_:hover{
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.side-link-title_::after {
+    content: "";
+    display: block;
+    padding-bottom: 0, 5rem;
+    border-bottom: 0.1rem solid var(--primary);
+    transform: scaleX(0.0);
+    transition: 0.2s linear;
+    transform-origin: 0 0;
+}
+
+.side-link-title_:hover::after {
+    transform: scaleX(1);
+}

@@ -4,6 +4,8 @@ use App\Http\Controllers\AlamatUDDController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegistrasiController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\JadwalMUController;
+use App\Http\Controllers\StokDarahController;
 use App\Models\JadwalMU;
 use App\Models\AlamatUDD;
 use App\Models\StokDarah;
@@ -44,3 +46,8 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('aut
 // Dashboard (AlamatUDD)
 Route::resource('/dashboard/alamatudd', AlamatUDDController::class)->middleware('auth');
 
+// Dashboard (StokDarah)
+Route::resource('/dashboard/stokdarah', StokDarahController::class)->middleware('auth');
+
+// Dashboard(Jadwal MU)
+Route::resource('/dasboard/jadwalmu', JadwalMUController::class)->middleware('auth');

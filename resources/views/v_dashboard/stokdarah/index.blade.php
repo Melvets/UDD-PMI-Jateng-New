@@ -4,10 +4,10 @@
     
     <!-- Page pre-title -->
     <div class="page-pretitle">
-      <a href="/dashboard" class="text-secondary">/dashboard</a><a href="/dashboard/alamatudd" class="text-secondary">/alamatudd</a>
+        <a href="/dashboard" class="text-secondary">/dashboard</a><a href="/dashboard/stokdarah" class="text-secondary">/stokdarah</a>
       </div>
       <h2 class="page-title">
-        Combo layout
+        Stok Darah {{ auth()->user()->AlamatUDD->udd_kabkot }}
       </h2>
 
     </div>
@@ -15,7 +15,7 @@
     <!-- Page title actions -->
     <div class="col-auto ms-auto d-print-none">
       <div class="btn-list">
-        <a href="/dashboard/alamatudd/create" class="btn d-none d-sm-inline-block text-white" style="background-color: #e60000">
+        <a href="/dashboard/stokdarah/create" class="btn d-none d-sm-inline-block text-white" style="background-color: #e60000">
           <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
           <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5l0 14" /><path d="M5 12l14 0" /></svg>
           Create New Data
@@ -61,25 +61,29 @@
               <tr>
                 <th class="w-1">No.</th>
                 <th>UDD Kabkot</th>
-                <th>Alamat</th>
-                <th>Telpon</th>
-                <th>Email</th>
+                <th>Golda A</th>
+                <th>Golda B</th>
+                <th>Golda AB</th>
+                <th>Golda O</th>
+                <th>Update</th>
                 <th>Action</th>
               </tr>
             </thead>
             <tbody>
 
-            @foreach ($dataAlamatUDD as $data)
+            @foreach ($dataStokDarah as $data)
               
               <tr>
                   <td><span class="text-secondary">{{ $loop->iteration }}</span></td>
-                  <td>{{ $data->udd_kabkot }}</td>
-                  <td>{{ $data->alamat }}</td>
-                  <td>{{ $data->telp }}</td>
-                  <td>{{ $data->email }}</td>
+                  <td>{{ $data->AlamatUDD->udd_kabkot }}</td>
+                  <td>{{ $data->golda_a }}</td>
+                  <td>{{ $data->golda_b }}</td>
+                  <td>{{ $data->golda_ab }}</td>
+                  <td>{{ $data->golda_o }}</td>
+                  <td>{{ $data->updated_at }}</td>
                   <td class="d-flex">
-                    <a href="/dashboard/alamatudd/{{ $data->id }}/edit" class="btn btn-default text-green btn-md shadow rounded-2 p-2" title="update"><i class="fas fa-pen"></i></a>
-                    <form action="/dashboard/alamatudd/{{ $data->id }}" method="POST">
+                    <a href="/dashboard/stokdarah/{{ $data->id }}/edit" class="btn btn-default text-green btn-md shadow rounded-2 p-2" title="update"><i class="fas fa-pen"></i></a>
+                    <form action="/dashboard/stokdarah/{{ $data->id }}" method="POST">
                       
                       @method('delete')
                       @csrf

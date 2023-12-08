@@ -2,84 +2,78 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AlamatUDD;
 use App\Models\StokDarah;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class StokDarahController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        return view('v_dashboard.stokdarah.index', [
+            // 'dataStokDarah' => AlamatUDD::where('id', auth()->user()->alamatudd_id)->get()
+            'dataStokDarah' => StokDarah::all()
+        ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('v_dashboard.stokdarah.create', [
+            'dataAlamatUDD' => AlamatUDD::all(),
+        ]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $validateData = $request->validate([
+            'alamat_id' => 'required|unique:stokdarah',
+            'golda_a' => 'required|numeric',
+            'golda_b' => 'required|numeric',
+            'golda_ab' => 'required|numeric',
+            'golda_o' => 'required|numeric'
+        ]);
+
+        StokDarah::create($validateData);
+
+        return redirect('/dashboard/stokdarah')->with('success', 'Data berhasil dibuat!');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\StokDarah  $stokDarah
-     * @return \Illuminate\Http\Response
-     */
     public function show(StokDarah $stokDarah)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\StokDarah  $stokDarah
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(StokDarah $stokDarah)
+    public function edit(StokDarah $stokDarah, $id)
     {
-        //
+        return view('v_dashboard.stokdarah.edit', [
+            'dataAlamatUDD' => AlamatUDD::all(),
+            'dataStokDarah' => StokDarah::find($id)
+        ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\StokDarah  $stokDarah
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, StokDarah $stokDarah)
+    public function update(Request $request, StokDarah $stokDarah, $id)
     {
-        //
+        $stokDarah = StokDarah::find($id);
+
+        $validateData = $request->validate([
+            'alamat_id' => 'required',
+            'golda_a' => 'required|numeric',
+            'golda_b' => 'required|numeric',
+            'golda_ab' => 'required|numeric',
+            'golda_o' => 'required|numeric'
+        ]);
+
+        StokDarah::where('id', $stokDarah->id)->update($validateData);
+
+        return redirect('/dashboard/stokdarah')->with('success', 'Data berhasil diupdate!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\StokDarah  $stokDarah
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(StokDarah $stokDarah)
+    public function destroy(StokDarah $stokDarah, $id)
     {
-        //
+        $stokDarah = StokDarah::find($id);
+        StokDarah::destroy($stokDarah->id);
+
+        return redirect('/dashboard/stokdarah')->with('success', 'Data berhasil dihapus!');
     }
 }

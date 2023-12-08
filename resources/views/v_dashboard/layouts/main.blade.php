@@ -41,6 +41,8 @@
     <!-- CSS files -->
     <link href="/template/dist/css/tabler.min.css?1685973381" rel="stylesheet"/>
     <link href="/template/dist/css/demo.min.css?1685973381" rel="stylesheet"/>
+    {{-- My Style --}}
+    <link rel="stylesheet" href="/css/style.css">
     <!-- Icons -->
     <script src="https://kit.fontawesome.com/9c45ff2d1a.js" crossorigin="anonymous"></script>
     <style>

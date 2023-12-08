@@ -97,13 +97,5 @@ class DatabaseSeeder extends Seeder
             'alamatudd_id' => '1',
             'password' => bcrypt('punyaamel8'),
         ]);
-
-        User::create([
-            'name' => 'Muhammad Nazril Ilham',
-            'username' => 'dnotnut',
-            'email' => 'ilhamjepara@gmail.com',
-            'alamatudd_id' => '2',
-            'password' => bcrypt('dnotnut'),
-        ]);
     }
 }
