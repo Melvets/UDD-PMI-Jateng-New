@@ -50,4 +50,4 @@ Route::resource('/dashboard/alamatudd', AlamatUDDController::class)->middleware(
 Route::resource('/dashboard/stokdarah', StokDarahController::class)->middleware('auth');
 
 // Dashboard(Jadwal MU)
-Route::resource('/dasboard/jadwalmu', JadwalMUController::class)->middleware('auth');
+Route::resource('/dashboard/jadwalmu', JadwalMUController::class)->middleware('auth');

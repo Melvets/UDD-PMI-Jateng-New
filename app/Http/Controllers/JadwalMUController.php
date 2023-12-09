@@ -2,84 +2,81 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AlamatUDD;
 use App\Models\JadwalMU;
+use App\Models\StokDarah;
 use Illuminate\Http\Request;
 
 class JadwalMUController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        //
+        return view('v_dashboard.jadwalmu.index', [
+            'dataJadwalMU' => JadwalMU::all()
+        ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('v_dashboard.jadwalmu.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $validateData = $request->validate([
+            'tempat' => 'required',
+            'alamat'  => 'required',
+            'jam_mulai' => 'required',
+            'jam_selesai' => 'required',
+            'peruntukan' => 'required'
+        ]);
+
+        $validateData['alamat_id'] = auth()->user()->alamatudd_id;
+
+        JadwalMU::create($validateData);
+
+        return redirect('/dashboard/jadwalmu')->with('success', 'Data berhasil ditambahkan!');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\JadwalMU  $jadwalMU
-     * @return \Illuminate\Http\Response
-     */
     public function show(JadwalMU $jadwalMU)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\JadwalMU  $jadwalMU
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(JadwalMU $jadwalMU)
+    public function edit(JadwalMU $jadwalMU, $id)
     {
-        //
+        $jadwalMU = JadwalMU::find($id);
+
+        return view('v_dashboard.jadwalmu.edit', [
+            'dataJadwalMU' => $jadwalMU
+        ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\JadwalMU  $jadwalMU
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, JadwalMU $jadwalMU)
+    public function update(Request $request, JadwalMU $jadwalMU, $id)
     {
-        //
+        $jadwalMU = JadwalMU::find($id);
+
+        $validateData = $request->validate([
+            'tempat' => 'required',
+            'alamat'  => 'required',
+            'jam_mulai' => 'required',
+            'jam_selesai' => 'required',
+            'peruntukan' => 'required'
+        ]);
+
+        $validateData['alamat_id'] = auth()->user()->alamatudd_id;
+
+        JadwalMU::where('id', $jadwalMU->id)->update($validateData);
+
+        return redirect('/dashboard/jadwalmu')->with('success', 'Data berhasil diupdate!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\JadwalMU  $jadwalMU
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(JadwalMU $jadwalMU)
+    public function destroy(JadwalMU $jadwalMU, $id)
     {
-        //
+        $jadwalMU = JadwalMU::find($id);
+        JadwalMU::destroy($jadwalMU->id);
+
+        return redirect('/dashboard/jadwalmu')->with('success', 'Data berhasil dihapus!');
     }
 }

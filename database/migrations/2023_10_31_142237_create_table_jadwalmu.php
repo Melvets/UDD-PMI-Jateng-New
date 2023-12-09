@@ -18,8 +18,8 @@ return new class extends Migration
             $table->foreignId('alamat_id');
             $table->string('tempat');
             $table->string('alamat');
-            $table->string('jam_mulai');
-            $table->string('jam_selesai');
+            $table->time('jam_mulai');
+            $table->time('jam_selesai');
             $table->string('peruntukan');
             $table->timestamps();
         });

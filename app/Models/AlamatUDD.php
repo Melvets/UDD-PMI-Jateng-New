@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class AlamatUDD extends Model
 {
@@ -12,8 +14,13 @@ class AlamatUDD extends Model
     protected $table = "alamatudd";
     protected $guarded = ['id'];
 
-    public function User()
+    public function User() : HasOne
     {
-        return $this->hasOne(User::class, 'alamatudd_id', 'id');
+        return $this->hasOne(User::class, 'alamat_id', 'id');
+    }
+
+    public function StokDarah() : HasMany
+    {
+        return $this->hasMany(StokDarah::class, 'alamat_id', 'id');
     }
 }
