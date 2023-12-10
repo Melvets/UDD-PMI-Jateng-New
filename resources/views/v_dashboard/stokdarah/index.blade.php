@@ -12,6 +12,7 @@
 
     </div>
 
+    @can('admin')
     <!-- Page title actions -->
     <div class="col-auto ms-auto d-print-none">
       <div class="btn-list">
@@ -22,6 +23,7 @@
         </a>
       </div>
     </div>
+    @endcan
 
   </div>
 </div>
@@ -81,15 +83,19 @@
                   <td>{{ $data->golda_ab }}</td>
                   <td>{{ $data->golda_o }}</td>
                   <td>{{ $data->updated_at }}</td>
-                  <td class="d-flex">
-                    <a href="/dashboard/stokdarah/{{ $data->id }}/edit" class="btn btn-default text-green btn-md shadow rounded-2 p-2" title="update"><i class="fas fa-pen"></i></a>
-                    <form action="/dashboard/stokdarah/{{ $data->id }}" method="POST">
+                  <td>
+                    <div class="d-inline-flex">
+                      <a href="/dashboard/stokdarah/{{ $data->id }}/edit" class="btn btn-default text-green btn-md shadow rounded-2 p-2" title="update"><i class="fas fa-pen"></i></a>
+                      @can('admin')
+                      <form action="/dashboard/stokdarah/{{ $data->id }}" method="POST">
                       
-                      @method('delete')
-                      @csrf
-                      
-                      <button class="btn btn-default text-red btn-md shadow rounded-2 p-2" onclick="return confirm('Apakah Anda yakin?')"> <i class="fas fa-trash"></i> </button>
-                    </form>
+                        @method('delete')
+                        @csrf
+                        
+                        <button class="btn btn-default text-red btn-md shadow rounded-2 p-2" onclick="return confirm('Apakah Anda yakin?')"> <i class="fas fa-trash"></i> </button>
+                      </form>
+                      @endcan
+                    </div>
                   </td>
               </tr>
 

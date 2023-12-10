@@ -9,11 +9,16 @@ use Illuminate\Http\Request;
 
 class JadwalMUController extends Controller
 {
-
     public function index()
     {
+        if(auth()->user()->isAdmin) {
+            $dataJadwalMU = JadwalMU::all();
+        } else {
+            $dataJadwalMU = JadwalMU::where('id', auth()->user()->alamatudd_id)->get();
+        }
+
         return view('v_dashboard.jadwalmu.index', [
-            'dataJadwalMU' => JadwalMU::all()
+            'dataJadwalMU' => $dataJadwalMU
         ]);
     }
 

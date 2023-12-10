@@ -12,13 +12,17 @@ class StokDarahController extends Controller
     public function index()
     {
         return view('v_dashboard.stokdarah.index', [
-            // 'dataStokDarah' => AlamatUDD::where('id', auth()->user()->alamatudd_id)->get()
-            'dataStokDarah' => StokDarah::all()
+            'dataStokDarah' => StokDarah::where('id', auth()->user()->alamatudd_id)->get()
+            // 'dataStokDarah' => StokDarah::all()
         ]);
     }
 
     public function create()
     {
+        if(!auth()->user()->isAdmin) {
+            return redirect('/dashboard/stokdarah');
+        }
+
         return view('v_dashboard.stokdarah.create', [
             'dataAlamatUDD' => AlamatUDD::all(),
         ]);
@@ -71,6 +75,10 @@ class StokDarahController extends Controller
 
     public function destroy(StokDarah $stokDarah, $id)
     {
+        if(!auth()->user()->isAdmin) {
+            return redirect('/dashboard/stokdarah');
+        }
+
         $stokDarah = StokDarah::find($id);
         StokDarah::destroy($stokDarah->id);
 

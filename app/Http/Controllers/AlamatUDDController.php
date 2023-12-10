@@ -9,14 +9,24 @@ class AlamatUDDController extends Controller
 {
     public function index()
     {
+        if(auth()->user()->isAdmin) {
+            $dataAlamatUDD = AlamatUDD::all();
+        } else {
+            $dataAlamatUDD = AlamatUDD::where('id', auth()->user()->alamatudd_id)->get();
+        }
+
         return view('v_dashboard.alamatudd.index', [
-            // 'dataAlamatUDD' => AlamatUDD::where('id', auth()->user()->alamatudd_id)->get()
-            'dataAlamatUDD' => AlamatUDD::all()
+            'dataAlamatUDD' => $dataAlamatUDD
         ]);
     }
 
     public function create()
     {
+        if(!auth()->user()->isAdmin) {
+            return redirect('/dashboard/alamatudd');
+        }
+        // $this->authorize('admin');
+
         return view('v_dashboard.alamatudd.create');
     }
 
@@ -68,6 +78,10 @@ class AlamatUDDController extends Controller
 
     public function destroy(AlamatUDD $alamatUDD, $id)
     {
+        if(!auth()->user()->isAdmin) {
+            return redirect('/dashboard/alamatudd');
+        }
+
         $alamatUDD = AlamatUDD::find($id);
 
         AlamatUDD::destroy($alamatUDD->id);

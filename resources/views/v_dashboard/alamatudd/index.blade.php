@@ -7,11 +7,12 @@
       <a href="/dashboard" class="text-secondary">/dashboard</a><a href="/dashboard/alamatudd" class="text-secondary">/alamatudd</a>
       </div>
       <h2 class="page-title">
-        Combo layout
+        {{ auth()->user()->AlamatUDD->udd_kabkot }}
       </h2>
 
     </div>
 
+    @can('admin')
     <!-- Page title actions -->
     <div class="col-auto ms-auto d-print-none">
       <div class="btn-list">
@@ -22,6 +23,7 @@
         </a>
       </div>
     </div>
+    @endcan
 
   </div>
 </div>
@@ -38,6 +40,7 @@
         <div class="card-header">
           <h3 class="card-title">Invoices</h3>
         </div>
+        @can('admin')
         <div class="card-body border-bottom py-3">
           <div class="d-flex">
             <div class="text-secondary">
@@ -55,6 +58,7 @@
             </div>
           </div>
         </div>
+        @endcan
         <div class="table-responsive">
           <table class="table card-table table-vcenter text-nowrap datatable">
             <thead>
@@ -77,15 +81,19 @@
                   <td>{{ $data->alamat }}</td>
                   <td>{{ $data->telp }}</td>
                   <td>{{ $data->email }}</td>
-                  <td class="d-flex">
-                    <a href="/dashboard/alamatudd/{{ $data->id }}/edit" class="btn btn-default text-green btn-md shadow rounded-2 p-2" title="update"><i class="fas fa-pen"></i></a>
-                    <form action="/dashboard/alamatudd/{{ $data->id }}" method="POST">
-                      
-                      @method('delete')
-                      @csrf
-                      
-                      <button class="btn btn-default text-red btn-md shadow rounded-2 p-2" onclick="return confirm('Apakah Anda yakin?')"> <i class="fas fa-trash"></i> </button>
-                    </form>
+                  <td>
+                    <div class="d-inline-flex">
+                      <a href="/dashboard/alamatudd/{{ $data->id }}/edit" class="btn btn-default text-green btn-md shadow rounded-2 p-2" title="update"><i class="fas fa-pen"></i></a>
+                      @can('admin')
+                      <form action="/dashboard/alamatudd/{{ $data->id }}" method="POST">
+                        
+                        @method('delete')
+                        @csrf
+                        
+                        <button class="btn btn-default text-red btn-md shadow rounded-2 p-2" onclick="return confirm('Apakah Anda yakin?')"> <i class="fas fa-trash"></i> </button>
+                      </form>
+                      @endcan
+                    </div>
                   </td>
               </tr>
 
@@ -94,6 +102,7 @@
             </tbody>
           </table>
         </div>
+        @can('admin')
         <div class="card-footer d-flex align-items-center">
           <p class="m-0 text-secondary">Showing <span>1</span> to <span>8</span> of <span>16</span> entries</p>
           <ul class="pagination m-0 ms-auto">
@@ -117,6 +126,7 @@
             </li>
           </ul>
         </div>
+        @endcan
       </div>
     </div>
     {{-- End Table --}}
