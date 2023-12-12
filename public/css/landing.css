@@ -101,7 +101,28 @@ section {
     display: none;
 }
 
+/* Home */
+.about{
+    padding: 0 10%;
+}
 
+.about .container_ {
+    /* justify-content: space-around; */
+    align-items: center;
+    justify-content: center;
+}
+
+.about .container_ .text_{
+    width: 25rem;
+    border-left: solid 5px var(--primary);
+    padding-left: 2rem;
+}
+
+.about .container_ .pic_ {
+    align-items: center;
+    justify-content: center;
+    padding-right: 2rem;
+}
 
 
 /* Tablet */

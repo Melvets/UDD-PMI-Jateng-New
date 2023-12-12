@@ -31,11 +31,41 @@
 
     <section id="home">
 
-      @yield('home')
+      <div class="parallax"></div>
+
+      <div class="card position-absolute top-40 start-50 translate-middle px-5" style="border-color: #e60000; border-width: 2px">
+        <div class="card-body text-center">
+          <p class="card-text fs-1 fw-bold pb-0 mb-0">UDD PMI JAWA TENGAH</p>
+          <h6 class="text-secondary" style="font-size: 0.8em">Teteskan <span class="text-decoration-underline" style="color: #e60000">darah kini,</span> untuk mereka yang <span class="text-decoration-underline" style="color: #e60000">membutuhkan nanti.</span></h6>
+        </div>
+      </div>
+
+      <div class="" style="height:150px; background-color: #fafafa;">
+          
+      </div>
+
+    </section>
+    
+    <section id="about" class="about">
+
+      <div class="container_ d-flex">
+
+        <div class="pic_">
+          <img src="/img/pic1.jpg" width="300">
+        </div>
+
+        <div class="text_">
+          <div class="">
+            <p>UDD PMI Provinsi Jawa Tengah adalah Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam doloremque unde nostrum ipsum temporibus ullam dolor voluptate odit ea exercitationem.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum facere ducimus nam repellat corrupti dignissimos praesentium beatae obcaecati! Inventore, deserunt.</p>
+          </div>
+        </div>
+
+      </div>
 
     </section>
 
-    <section id="jadwalmu">
+    {{-- <section id="jadwalmu">
       
       @yield('jadwalmu')
       
@@ -51,7 +81,7 @@
 
       @yield('alamatudd')
     
-    </section>
+    </section> --}}
     
 
 
