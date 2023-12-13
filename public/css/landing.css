@@ -112,17 +112,19 @@ section {
     justify-content: center;
 }
 
+.about .container_ .pic_ {
+    align-items: center;
+    justify-content: center;
+    margin-right: 2rem;
+    box-shadow: 5px 5px 5px #888888;
+}
+
 .about .container_ .text_{
     width: 25rem;
     border-left: solid 5px var(--primary);
     padding-left: 2rem;
 }
 
-.about .container_ .pic_ {
-    align-items: center;
-    justify-content: center;
-    padding-right: 2rem;
-}
 
 
 /* Tablet */

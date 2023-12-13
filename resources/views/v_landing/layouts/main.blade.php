@@ -46,23 +46,29 @@
 
     </section>
     
-    <section id="about" class="about">
+    <section id="about" class="about pb-5">
 
       <div class="container_ d-flex">
 
-        <div class="pic_">
-          <img src="/img/pic1.jpg" width="300">
+        <div class="pic_ position-relative">
+          <img src="/img/donordarah.png" width="550">
         </div>
 
         <div class="text_">
-          <div class="">
-            <p>UDD PMI Provinsi Jawa Tengah adalah Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam doloremque unde nostrum ipsum temporibus ullam dolor voluptate odit ea exercitationem.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum facere ducimus nam repellat corrupti dignissimos praesentium beatae obcaecati! Inventore, deserunt.</p>
+          <div class="" style="font-size: 0.8em">
+            <p><span class="fw-bold" style="color: #e60000">UDD PMI Provinsi Jawa Tengah</span> merupakan pusat upaya penyediaan darah yang terletak di Jalan Arumsari RT. 11 RW. 02 Sambiroto, Semarang. UDD PMI Provinsi Jawa Tengah mendorong partisipasi aktif masyarakat dalam kegiatan donor darah, memastikan pasokan mencukupi untuk kebutuhan medis.</p>
+            <p>Donor darah di UDD PMI Provinsi Jawa Tengah menjadi kegiatan yang mendukung ketersediaan darah di wilayah Jawa Tengah. Melalui proses donor, masyarakat dapat berkontribusi langsung dalam menyelamatkan nyawa dan meningkatkan kesehatan komunitas sekitar.</p>
           </div>
         </div>
 
       </div>
 
+    </section>
+
+    <section>
+      <div class="" style="background-color: rgba(230, 0, 0, 0.8)">
+
+      </div>
     </section>
 
     {{-- <section id="jadwalmu">
