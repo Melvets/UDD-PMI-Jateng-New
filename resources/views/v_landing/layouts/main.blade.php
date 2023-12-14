@@ -56,8 +56,8 @@
 
         <div class="text_">
           <div class="" style="font-size: 0.8em">
-            <p><span class="fw-bold" style="color: #e60000">UDD PMI Provinsi Jawa Tengah</span> merupakan pusat upaya penyediaan darah yang terletak di Jalan Arumsari RT. 11 RW. 02 Sambiroto, Semarang. UDD PMI Provinsi Jawa Tengah mendorong partisipasi aktif masyarakat dalam kegiatan donor darah, memastikan pasokan mencukupi untuk kebutuhan medis.</p>
-            <p>Donor darah di UDD PMI Provinsi Jawa Tengah menjadi kegiatan yang mendukung ketersediaan darah di wilayah Jawa Tengah. Melalui proses donor, masyarakat dapat berkontribusi langsung dalam menyelamatkan nyawa dan meningkatkan kesehatan komunitas sekitar.</p>
+            <p><span class="fw-bold" style="color: #e60000">UDD PMI Provinsi Jawa Tengah</span> merupakan pusat upaya penyediaan darah yang terletak di Jalan Arumsari RT. 11 RW. 02 Sambiroto, Semarang. </p>
+            <p>Donor darah menjadi kegiatan yang mendukung ketersediaan darah di wilayah Jawa Tengah. Melalui proses donor, masyarakat dapat berkontribusi langsung dalam menyelamatkan nyawa dan meningkatkan kesehatan komunitas sekitar untuk mencukupi kebutuhan medis.</p>
           </div>
         </div>
 
@@ -65,12 +65,74 @@
 
     </section>
 
-    <section>
-      <div class="" style="background-color: rgba(230, 0, 0, 0.8)">
-        
+    <section class="informasi1_ pb-5">
+      <div class="container_">
+        <img src="/img/dd-ilustrasiTanya.png" width="150">
+        <div class="text_">
+          <p>Mau donor darah tapi bingung di mana? <br> Cek jadwal kotamu di bawah ini! </p>
+        </div>
+        <div class="icon_">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-big-down-lines-filled" width="50" height="50" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 8l-.117 .007a1 1 0 0 0 -.883 .993v1.999l-2.586 .001a2 2 0 0 0 -1.414 3.414l6.586 6.586a2 2 0 0 0 2.828 0l6.586 -6.586a2 2 0 0 0 .434 -2.18l-.068 -.145a2 2 0 0 0 -1.78 -1.089l-2.586 -.001v-1.999a1 1 0 0 0 -1 -1h-6z" stroke-width="0" fill="#e60000" /><path d="M15 2a1 1 0 0 1 .117 1.993l-.117 .007h-6a1 1 0 0 1 -.117 -1.993l.117 -.007h6z" stroke-width="0" fill="#e60000" /><path d="M15 5a1 1 0 0 1 .117 1.993l-.117 .007h-6a1 1 0 0 1 -.117 -1.993l.117 -.007h6z" stroke-width="0" fill="#e60000" /></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-big-down-lines-filled" width="50" height="50" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 8l-.117 .007a1 1 0 0 0 -.883 .993v1.999l-2.586 .001a2 2 0 0 0 -1.414 3.414l6.586 6.586a2 2 0 0 0 2.828 0l6.586 -6.586a2 2 0 0 0 .434 -2.18l-.068 -.145a2 2 0 0 0 -1.78 -1.089l-2.586 -.001v-1.999a1 1 0 0 0 -1 -1h-6z" stroke-width="0" fill="#e60000" /><path d="M15 2a1 1 0 0 1 .117 1.993l-.117 .007h-6a1 1 0 0 1 -.117 -1.993l.117 -.007h6z" stroke-width="0" fill="#e60000" /><path d="M15 5a1 1 0 0 1 .117 1.993l-.117 .007h-6a1 1 0 0 1 -.117 -1.993l.117 -.007h6z" stroke-width="0" fill="#e60000" /></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-big-down-lines-filled" width="50" height="50" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 8l-.117 .007a1 1 0 0 0 -.883 .993v1.999l-2.586 .001a2 2 0 0 0 -1.414 3.414l6.586 6.586a2 2 0 0 0 2.828 0l6.586 -6.586a2 2 0 0 0 .434 -2.18l-.068 -.145a2 2 0 0 0 -1.78 -1.089l-2.586 -.001v-1.999a1 1 0 0 0 -1 -1h-6z" stroke-width="0" fill="#e60000" /><path d="M15 2a1 1 0 0 1 .117 1.993l-.117 .007h-6a1 1 0 0 1 -.117 -1.993l.117 -.007h6z" stroke-width="0" fill="#e60000" /><path d="M15 5a1 1 0 0 1 .117 1.993l-.117 .007h-6a1 1 0 0 1 -.117 -1.993l.117 -.007h6z" stroke-width="0" fill="#e60000" /></svg>
+        </div>
       </div>
+      <div class="position-absolute" style="bottom: -30rem" id="jadwalmu"></div>
     </section>
 
+    <section class="jadwalmu_ pb-5">
+      <div class="container" style="height:1500px;">
+
+        <h2 class="fw-bold fs-2 text-center"> JADWAL <span style="color: #e60000">MOBILE UNIT</span> </h2>
+        <h6 class="text-center mb-4" style="font-size: 0.8em;">Jadwal Donor Mobile Unit UDD h6MI Se Jateng (Tanggal 16-June-2023)</h6>
+    
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <div class="input-group mb-3">
+              <input type="text" class="form-control form-control-sm" placeholder="Search ..." name="search" value="{{ request('search') }}">
+              <button class="btn btn-sm text-white" style="background-color: #e60000" type="submit" id="">Search</button>
+            </div>
+          </div>
+        </div>
+    
+        <div class="row justify-content-center">
+          <div class="col-lg-12">
+            <div class="table-responsive-lg">
+              <table class="table table-striped table-hover table-sm table-bordered" style="font-size: 0.8em">
+                  <thead class="text-center text-white" style="background-color: #cc0000">
+                    <tr>
+                        <th class="py-3 px-3" scope="col">No</th>
+                        <th class="col-lg-2 py-3 px-1" scope="col">UDD PMI - Tempat</th>
+                        <th class="py-3 px-1" scope="col">TEMPAT</th>
+                        <th class="py-3 px-1" scope="col">ALAMAT</th>
+                        <th class="col-lg-1 py-3 px-1" scope="col">JAM MULAI</th>
+                        <th class="col-lg-1 py-3 px-1" scope="col">JAM SELESAI</th>
+                        <th class="py-3 px-3" scope="col">PERUNTUKAN</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+    
+                    @foreach ($dataJadwalMU as $data)
+                      
+                      <tr>
+                          <th scope="row" class="text-center">{{ $loop->iteration }}</th>
+                          <td>{{ $data->AlamatUDD->udd_kabkot }}</td>
+                          <td>{{ $data->tempat }}</td>
+                          <td class="text-center">{{ $data->alamat }}</td>
+                          <td class="text-center">{{ $data->jam_mulai }}</td>
+                          <td class="text-center">{{ $data->jam_selesai }}</td>
+                          <td class="text-center">{{ $data->peruntukan }}</td>
+                      </tr>
+                        
+                    @endforeach
+    
+                  </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     {{-- <section id="jadwalmu">
       
       @yield('jadwalmu')

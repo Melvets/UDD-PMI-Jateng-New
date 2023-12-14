@@ -30,7 +30,7 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.8rem 10%; 
+    padding: 0.8rem 15%; 
     background-color: rgba(255, 255, 255, 0.8);
     border-bottom: 3px solid var(--primary);
     position: fixed;
@@ -103,13 +103,13 @@ section {
 
 /* Home */
 .about{
-    padding: 0 10%;
+    padding: 0 15%;
 }
 
 .about .container_ {
-    /* justify-content: space-around; */
+    /* justify-content: space-between; */
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
 }
 
 .about .container_ .pic_ {
@@ -120,12 +120,28 @@ section {
 }
 
 .about .container_ .text_{
-    width: 25rem;
     border-left: solid 5px var(--primary);
     padding-left: 2rem;
 }
 
+/* Informasi */
+.informasi1_ .container_ {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 15%;
+    align-items: center;
+    background-color: #ffb6b6;
+}
 
+.informasi1_ .container_ .text_ p {
+    font-weight: bold;
+    font-size: 1.4em;
+}
+
+/* jadwalmu */
+.jadwalmu_ {
+    padding: 0 15%;
+}
 
 /* Tablet */
 @media (max-width: 890px) {
