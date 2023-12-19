@@ -2,6 +2,7 @@
     --primary: #e60000;
     --darkprimary: #cc0000;
     --bg: #fafafa;
+    --yellow: #d6de00;
 }
 
 * {
@@ -136,11 +137,6 @@ section {
 .informasi1_ .container_ .text_ p {
     font-weight: bold;
     font-size: 1.4em;
-}
-
-/* jadwalmu */
-.jadwalmu_ {
-    padding: 0 15%;
 }
 
 /* Tablet */
