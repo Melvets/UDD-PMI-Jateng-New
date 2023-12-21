@@ -355,34 +355,37 @@
 
       <p class="fw-bold ps-2" style="font-size: 25px; border-left: solid 4px #e60000">Media & Publikasi<span style="color: #e60000"></span></p>
 
-      <div class="d-flex" style="flex-wrap: wrap; justify-content: space-between;">
+      <div class="d-flex mb-2" style="flex-wrap: wrap; justify-content: space-between;">
         
-        <div class="card" style="width: 18rem;">
+        <div class="card" style="width: 19rem;">
           <img src="/img/user/blank-image.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+          <div class="card-body" style="font-size: 12px">
+            <a href="#" class="card-title fw-bold mb-0 text-decoration-none text-reset" style="font-size: 18px">Dolorum iure officia quisquam possimus dolorum</a>
+            <p class="text-secondary mb-1">By <a href="#" class="text-decoration-none" style="color: #e60000">Admin</a> 39 seconds ago</p>
+            <p class="card-text mb-0" style="text-align: justify;">Quasi sunt aliquam ut. Voluptatem eveniet illum et molestiae molestiae. Rerum et ab totam vel facilis mollitia maiores.</p>
           </div>
         </div>
-        <div class="card" style="width: 18rem;">
+        <div class="card" style="width: 19rem;">
           <img src="/img/user/blank-image.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+          <div class="card-body" style="font-size: 12px">
+            <a href="#" class="card-title fw-bold mb-0 text-decoration-none text-reset" style="font-size: 18px">Dolorum iure officia quisquam possimus dolorum</a>
+            <p class="text-secondary mb-1">By <a href="#" class="text-decoration-none" style="color: #e60000">Admin</a> 39 seconds ago</p>
+            <p class="card-text mb-0" style="text-align: justify;">Quasi sunt aliquam ut. Voluptatem eveniet illum et molestiae molestiae. Rerum et ab totam vel facilis mollitia maiores.</p>
           </div>
         </div>
-        <div class="card" style="width: 18rem;">
+        <div class="card" style="width: 19rem;">
           <img src="/img/user/blank-image.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+          <div class="card-body" style="font-size: 12px">
+            <a href="#" class="card-title fw-bold mb-0 text-decoration-none text-reset" style="font-size: 18px">Dolorum iure officia quisquam possimus dolorum</a>
+            <p class="text-secondary mb-1">By <a href="#" class="text-decoration-none" style="color: #e60000">Admin</a> 39 seconds ago</p>
+            <p class="card-text mb-0" style="text-align: justify;">Quasi sunt aliquam ut. Voluptatem eveniet illum et molestiae molestiae. Rerum et ab totam vel facilis mollitia maiores.</p>
           </div>
         </div>
       
       </div>
+      <a href="" class="text-decoration-none">
+        <div class="d-flex justify-content-end fw-bold" style="font-size: 0.8em"><p class="pe-1" style="padding-top: 2px; color: #252525">Lihat lainnya</p><svg style="color: #e60000" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-narrow-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="#E60000" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l14 0" /><path d="M15 16l4 -4" /><path d="M15 8l4 4" /></svg></div>
+      </a>
 
     </section>
 
