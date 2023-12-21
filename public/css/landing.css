@@ -139,6 +139,14 @@ section {
     font-size: 1.4em;
 }
 
+.iconf_ div{
+    background-color: #fafafa;
+}
+
+.iconf_ div:hover{
+    background-color: #d6de00;
+}
+
 /* Tablet */
 @media (max-width: 890px) {
     img {
