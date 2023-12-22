@@ -62,6 +62,7 @@
                 <th>UDD Kabkot</th>
                 <th>Tempat</th>
                 <th width="320px">Alamat</th>
+                <th>Kabupaten/Kota</th>
                 <th>Jam Mulai</th>
                 <th>Jam Selesai</th>
                 <th>Peruntukan</th>
@@ -77,6 +78,7 @@
                   <td>{{ $data->AlamatUDD->udd_kabkot }}</td>
                   <td>{{ $data->tempat }}</td>
                   <td>{{ $data->alamat }}</td>
+                  <td>{{ $data->kabkot }}</td>
                   <td>{{ $data->jam_mulai }}</td>
                   <td>{{ $data->jam_selesai }}</td>
                   <td>{{ $data->peruntukan }}</td>

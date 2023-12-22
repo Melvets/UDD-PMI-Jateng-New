@@ -32,6 +32,7 @@ class JadwalMUController extends Controller
         $validateData = $request->validate([
             'tempat' => 'required',
             'alamat'  => 'required',
+            'kabkot' => 'required',
             'jam_mulai' => 'required',
             'jam_selesai' => 'required',
             'peruntukan' => 'required'
@@ -65,6 +66,7 @@ class JadwalMUController extends Controller
         $validateData = $request->validate([
             'tempat' => 'required',
             'alamat'  => 'required',
+            'kabkot' => 'required',
             'jam_mulai' => 'required',
             'jam_selesai' => 'required',
             'peruntukan' => 'required'

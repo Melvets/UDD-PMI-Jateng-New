@@ -3,7 +3,7 @@
 
     <div class="navbar-nav_">
         <a href="/">HOME</a>
-        <a href="#">JADWAL MOBILE UNIT</a>
+        <a href="/jadwalmu">JADWAL MU</a>
         <a href="#">STOK DARAH</a>
         <a href="#">ALAMAT UDD</a>
         <a href="#">MEDIA & PUBLIKASI</a>

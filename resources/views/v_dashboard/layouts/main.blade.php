@@ -45,6 +45,7 @@
     <link rel="stylesheet" href="/css/style.css">
     <!-- Icons -->
     <script src="https://kit.fontawesome.com/9c45ff2d1a.js" crossorigin="anonymous"></script>
+
     <style>
 
       :root {

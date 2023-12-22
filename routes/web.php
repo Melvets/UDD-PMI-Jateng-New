@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegistrasiController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\JadwalMUController;
+use App\Http\Controllers\LandingController;
 use App\Http\Controllers\StokDarahController;
 use App\Models\JadwalMU;
 use App\Models\AlamatUDD;
@@ -23,13 +24,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function() {
-    return view ('v_landing.index', [
-        'dataAlamatUDD' => AlamatUDD::all(),
-        'dataStokDarah' => StokDarah::all(),
-        'dataJadwalMU' => JadwalMU::all()
-    ]);
-});
+Route::get('/', [LandingController::class, 'home']);
+Route::get('/jadwalmu', [LandingController::class, 'jadwalmu']);
 
 // Registrasi
 Route::get('/register', [RegistrasiController::class, 'index']);

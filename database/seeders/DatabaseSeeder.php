@@ -97,6 +97,23 @@ class DatabaseSeeder extends Seeder
             'email' => 'camelaputri1@gmail.com',
             'alamatudd_id' => '1',
             'password' => bcrypt('punyaamel8'),
+            'isAdmin' => 1
+        ]);
+
+        User::create([
+            'name' => 'Rizky Apriansyah',
+            'username' => 'kikap',
+            'email' => 'rizkyap@gmail.com',
+            'alamatudd_id' => '3',
+            'password' => bcrypt('rizky'),
+        ]);
+
+        User::create([
+            'name' => 'Ned Saintra',
+            'username' => 'nedstra',
+            'email' => 'ned@gmail.com',
+            'alamatudd_id' => '2',
+            'password' => bcrypt('nedstr'),
         ]);
     }
 }
