@@ -12,10 +12,19 @@ class JadwalMUController extends Controller
     public function index()
     {
         if(auth()->user()->isAdmin) {
-            $dataJadwalMU = JadwalMU::orderBy('tanggal', 'ASC')->orderBy('jam_mulai', 'ASC')->get();
+            $query = JadwalMU::orderBy('tanggal', 'ASC')->orderBy('jam_mulai', 'ASC');
         } else {
-            $dataJadwalMU = JadwalMU::where('id', auth()->user()->alamatudd_id)->orderBy('tanggal', 'ASC')->get();
+            $query = JadwalMU::where('id', auth()->user()->alamatudd_id)->orderBy('tanggal', 'ASC');
         }
+
+        if(request('search')) {
+            $query->where('tempat', 'like', '%' . request('search') . '%')
+                    ->orWhere('alamat', 'like', '%' . request('search') . '%')
+                    ->orWhere('kabkot', 'like', '%' . request('search') . '%')
+                    ->orWhere('peruntukan', 'like', '%' . request('search') . '%');
+        }
+
+        $dataJadwalMU = $query->paginate(5);
 
         return view('v_dashboard.jadwalmu.index', [
             'dataJadwalMU' => $dataJadwalMU

@@ -46,12 +46,20 @@
               </div>
               entries
             </div>
-            <div class="ms-auto text-secondary">
-              Search:
-              <div class="ms-2 d-inline-block">
-                <input type="text" class="form-control form-control-sm" aria-label="Search invoice">
+            
+            <form action="/dashboard/jadwalmu" method="GET" class="ms-auto d-flex">
+              <div class="ms-auto text-secondary">
+                  Search:
+                  <div class="ms-2 d-inline-block">
+                    <input name="search" type="text" class="form-control form-control-sm" aria-label="Search invoice" value="{{ request('search') }}">
+                  </div>
               </div>
-            </div>
+              <button type="submit" class="btn btn-danger"
+                      style="padding: .5rem 0; padding: 0 .5rem; font-size: .7em;">
+                Search
+              </button>
+            </form>
+
           </div>
         </div>
         <div class="table-responsive">
@@ -59,7 +67,7 @@
             <thead>
               <tr>
                 <th class="w-1">No.</th>
-                <th>UDD Kabkot</th>
+                <th width="100px">UDD Kabkot</th>
                 <th>Tempat</th>
                 <th width="250px">Alamat</th>
                 <th>Kabupaten/Kota</th>
