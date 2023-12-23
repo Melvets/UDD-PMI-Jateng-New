@@ -12,9 +12,9 @@ class JadwalMUController extends Controller
     public function index()
     {
         if(auth()->user()->isAdmin) {
-            $dataJadwalMU = JadwalMU::all();
+            $dataJadwalMU = JadwalMU::orderBy('tanggal', 'ASC')->orderBy('jam_mulai', 'ASC')->get();
         } else {
-            $dataJadwalMU = JadwalMU::where('id', auth()->user()->alamatudd_id)->get();
+            $dataJadwalMU = JadwalMU::where('id', auth()->user()->alamatudd_id)->orderBy('tanggal', 'ASC')->get();
         }
 
         return view('v_dashboard.jadwalmu.index', [
@@ -35,6 +35,7 @@ class JadwalMUController extends Controller
             'kabkot' => 'required',
             'jam_mulai' => 'required',
             'jam_selesai' => 'required',
+            'tanggal' => 'required',
             'peruntukan' => 'required'
         ]);
 
@@ -69,6 +70,7 @@ class JadwalMUController extends Controller
             'kabkot' => 'required',
             'jam_mulai' => 'required',
             'jam_selesai' => 'required',
+            'tanggal' => 'required',
             'peruntukan' => 'required'
         ]);
 

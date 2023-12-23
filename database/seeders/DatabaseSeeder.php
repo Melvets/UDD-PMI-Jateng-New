@@ -64,32 +64,38 @@ class DatabaseSeeder extends Seeder
             'golda_o' => 300
         ]);
 
-        // JadwalMU::create([
-        //     'alamat_id' => 2,
-        //     'tempat' => 'Hotel Java Heritage Purwokerto',
-        //     'alamat' => 'Jl. Dr. Angka Kec. Purwokerto Timur',
-        //     'jam_mulai' => time('19:30'),
-        //     'jam_selesai' => time('20:30'),
-        //     'peruntukan' => 'Umum',
-        // ]);
+        JadwalMU::create([
+            'alamat_id' => 2,
+            'tempat' => 'Hotel Java Heritage Purwokerto',
+            'alamat' => 'Jl. Dr. Angka Kec. Purwokerto Timur',
+            'kabkot' => 'Kabupaten Semarang',
+            'jam_mulai' => '10:00',
+            'jam_selesai' => '12:00',
+            'tanggal' => date('2023-12-23 00:00:00'),
+            'peruntukan' => 'Umum',
+        ]);
         
-        // JadwalMU::create([
-        //     'alamat_id' => 1,
-        //     'tempat' => 'Desa Bojongsari Kec. Kembaran',
-        //     'alamat' => 'Jl. Balai Desa Bojongsari Kec. Kembaran',
-        //     'jam_mulai' => time('12:30'),
-        //     'jam_selesai' => time('15:30'),
-        //     'peruntukan' => 'Umum',
-        // ]);
+        JadwalMU::create([
+            'alamat_id' => 1,
+            'tempat' => 'Desa Bojongsari Kec. Kembaran',
+            'alamat' => 'Jl. Balai Desa Bojongsari Kec. Kembaran',
+            'kabkot' => 'Kota Semarang',
+            'jam_mulai' => '08:00',
+            'jam_selesai' => '15:00',
+            'tanggal' => date('2023-12-25 00:00:00'),
+            'peruntukan' => 'Internal',
+        ]);
 
-        // JadwalMU::create([
-        //     'alamat_id' => 3,
-        //     'tempat' => 'DESA DELEGTUKANG',
-        //     'alamat' => 'Delegtukang Wiradesa',
-        //     'jam_mulai' => time('23:30'),
-        //     'jam_selesai' => time('24:00'),
-        //     'peruntukan' => 'Umum',
-        // ]);
+        JadwalMU::create([
+            'alamat_id' => 3,
+            'tempat' => 'DESA DELEGTUKANG',
+            'alamat' => 'Delegtukang Wiradesa',
+            'kabkot' => 'Kota Tegal',
+            'jam_mulai' => '15:00',
+            'jam_selesai' => '20:00',
+            'tanggal' => date('2023-12-22 00:00:00'),
+            'peruntukan' => 'Umum',
+        ]);
 
         User::create([
             'name' => 'Camela Devs',

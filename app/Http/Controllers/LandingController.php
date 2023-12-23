@@ -8,14 +8,22 @@ use App\Models\JadwalMU;
 class LandingController extends Controller
 {
     public function home() {
+
+        $dataJadwalMU = JadwalMU::where('tanggal', date('Y-m-d'))->get();
+
         return view ('v_landing.index', [
-            'dataJadwalMU' => JadwalMU::all()
+            'dataJadwalMU' => $dataJadwalMU
         ]);
     }
 
     public function jadwalmu() {
+
+        $dataJadwalMU = JadwalMU::where('tanggal', date('Y-m-d'))->get();
+
         return view ('v_landing.jadwalmu', [
-            'dataJadwalMU' => JadwalMU::all()
+            'dataJadwalMU' => $dataJadwalMU
         ]);
     }
 }
+
+// $data['created_at'] = date('Y-m-d H:i:s');

@@ -108,7 +108,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-4">
+                            <div class="col-md-2">
                                 <div class="mb-1">
                                     <label for="jam_mulai" class="form-label required">Jam Mulai</label>
                                     <input type="time" name="jam_mulai" id="jam_mulai" class="form-control @error('jam_mulai') is-invalid @enderror" placeholder="Wajib diisi ..." required value="{{ old('jam_mulai', $dataJadwalMU->jam_mulai) }}">
@@ -120,11 +120,23 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-4">
+                            <div class="col-md-2">
                                 <div class="mb-1">
                                     <label for="jam_selesai" class="form-label required">Jam Selesai</label>
                                     <input type="time" name="jam_selesai" id="jam_selesai" class="form-control @error('jam_selesai') is-invalid @enderror" placeholder="Wajib diisi ..." required value="{{ old('jam_selesai', $dataJadwalMU->jam_selesai) }}">
                                     @error('jam_selesai')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="col-md-5">
+                                <div class="mb-3">
+                                    <label for="tanggal" class="form-label required">Tanggal</label>
+                                    <input type="date" name="tanggal" id="tanggal" class="form-control @error('tanggal') is-invalid @enderror" required value="{{ old('tanggal', $dataJadwalMU->tanggal) }}">
+                                    @error('tanggal')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>

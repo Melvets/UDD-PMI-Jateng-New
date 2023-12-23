@@ -31,6 +31,8 @@
 
     @yield('container')
 
+    @include('v_landing.layouts.partials.footer')
+
     <script>
       feather.replace();
     </script>

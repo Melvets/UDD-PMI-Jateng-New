@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('kabkot');
             $table->time('jam_mulai');
             $table->time('jam_selesai');
+            $table->date('tanggal');
             $table->string('peruntukan');
             $table->timestamps();
         });
