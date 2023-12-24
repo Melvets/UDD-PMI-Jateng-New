@@ -104,7 +104,7 @@
           <div class="collapse navbar-collapse" id="sidebar-menu">
 
             {{-- Sidebar =========================================================================================================================== --}}
-            <ul class="navbar-nav pt-lg-3">
+            <ul class="navbar-nav">
               
                 @include('v_dashboard.layouts.partials.sidebar')
 
