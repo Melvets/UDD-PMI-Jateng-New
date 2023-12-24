@@ -7,16 +7,21 @@
 
             <h2 class="fw-bold fs-2 text-center" style="padding-top: 6.5rem"> JADWAL <span style="color: #e60000">MOBILE UNIT</span> </h2>
             <h6 class="text-center mb-4" style="font-size: 0.8em;">Jadwal Donor Darah Mobile Unit Hari Ini (tanggal <span style="color: #e60000">{{ date('d M Y') }}</span>)</h6>
-        
-            <div class="row justify-content-center">
-              <div class="col-lg-6">
-                <div class="input-group mb-3">
-                  <input type="text" class="form-control form-control-sm" placeholder="Search ..." name="search" value="{{ request('search') }}">
-                  <button class="btn btn-sm text-white" style="background-color: #e60000" type="submit" id="">Search</button>
+
+            <form action="/jadwalmu" action="GET">
+            
+              <div class="row justify-content-center">
+                <div class="col-lg-6">
+                  <div class="input-group mb-3">
+                    <input type="text" class="form-control form-control-sm" placeholder="Search ..." name="search" value="{{ request('search') }}">
+                    <button class="btn btn-sm text-white" style="background-color: #e60000" type="submit" id="search">Search</button>
+                  </div>
                 </div>
               </div>
-            </div>
-        
+
+            </form>
+
+            
             <div class="d-flex" style="flex-wrap: wrap; justify-content: center; ">
       
                 @foreach ($dataJadwalMU as $data)

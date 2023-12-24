@@ -70,6 +70,12 @@ section {
     transform: scaleX(0.5);
 }
 
+.navbar_ .navbar-nav_ .active {
+    color: var(--primary);
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
 /* Navbar-extra */
 .navbar_ .navbar-extra_ .login_ {
     background-color: var(--primary);

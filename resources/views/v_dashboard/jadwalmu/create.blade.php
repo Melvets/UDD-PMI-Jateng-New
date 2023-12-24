@@ -32,12 +32,33 @@
 
                         <div class="row row-cards">
 
+                            @can('admin')
+                            <div class="col-md-12">
+                                <div class="mb-1">
+                                    <label for="alamat_id" class="form-label">UDD Kabupaten/Kota</label>
+                                    <select class="form-select kabkot" id="alamat_id" name="alamat_id">
+                                        <option selected>--Pilih UDD Kabupaten/Kota--</option>
+                                        @foreach ($dataAlamatUDD as $data)
+                                            <option value="{{ $data->id }}">{{ $data->udd_kabkot }}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('alamat_id')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                            </div>
+                            @endcan
+
+                            @can(!'admin')
                             <div class="col-md-12">
                                 <div class="mb-1">
                                     <label for="alamat_id" class="form-label">UDD Kabupaten/Kota</label>
                                     <input disabled type="text" name="alamat_id" id="alamat_id" class="form-control" placeholder="Wajib diisi ..." value="{{ auth()->user()->AlamatUDD->udd_kabkot }}">
                                 </div>
                             </div>
+                            @endcan
 
                             <div class="col-md-3">
                                 <div class="mb-1">

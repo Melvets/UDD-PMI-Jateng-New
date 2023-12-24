@@ -12,33 +12,50 @@ class JadwalMUController extends Controller
     public function index()
     {
         if(auth()->user()->isAdmin) {
-            $query = JadwalMU::orderBy('tanggal', 'ASC')->orderBy('jam_mulai', 'ASC');
+            $query = JadwalMU::orderBy('tanggal', 'DESC')->orderBy('jam_mulai', 'ASC');
+
+            if(request('search')) {
+                $query = JadwalMU::where('tempat', 'like', '%' . request('search') . '%')
+                                    ->orWhere('alamat', 'like', '%' . request('search') . '%')
+                                    ->orWhere('kabkot', 'like', '%' . request('search') . '%')
+                                    ->orWhere('peruntukan', 'like', '%' . request('search') . '%');
+
+                $query->orderBy('tanggal', 'DESC')->orderBy('jam_mulai', 'ASC');
+            }
+            
         } else {
-            $query = JadwalMU::where('id', auth()->user()->alamatudd_id)->orderBy('tanggal', 'ASC');
+            $query = JadwalMU::where('alamat_id', auth()->user()->alamatudd_id);
+            $query->orderBy('tanggal', 'DESC')->orderBy('jam_mulai', 'ASC');
+
+            if(request('search')) {
+                $query = JadwalMU::where('tempat', 'like', '%' . request('search') . '%')
+                                    ->orWhere('alamat', 'like', '%' . request('search') . '%')
+                                    ->orWhere('kabkot', 'like', '%' . request('search') . '%')
+                                    ->orWhere('peruntukan', 'like', '%' . request('search') . '%');
+
+                $query->where('alamat_id', auth()->user()->alamatudd_id);
+                $query->orderBy('tanggal', 'DESC')->orderBy('jam_mulai', 'ASC');
+            }
         }
 
-        if(request('search')) {
-            $query->where('tempat', 'like', '%' . request('search') . '%')
-                    ->orWhere('alamat', 'like', '%' . request('search') . '%')
-                    ->orWhere('kabkot', 'like', '%' . request('search') . '%')
-                    ->orWhere('peruntukan', 'like', '%' . request('search') . '%');
-        }
-
-        $dataJadwalMU = $query->paginate(5);
+        $dataJadwalMU = $query->paginate(5)->appends(['search' => request('search')]);
 
         return view('v_dashboard.jadwalmu.index', [
-            'dataJadwalMU' => $dataJadwalMU
+            'dataJadwalMU' => $dataJadwalMU,
         ]);
     }
 
     public function create()
     {
-        return view('v_dashboard.jadwalmu.create');
+        return view('v_dashboard.jadwalmu.create', [
+            'dataAlamatUDD' => AlamatUDD::all(),
+        ]);
     }
 
     public function store(Request $request)
     {
         $validateData = $request->validate([
+            'alamat_id' => 'required',
             'tempat' => 'required',
             'alamat'  => 'required',
             'kabkot' => 'required',
@@ -48,7 +65,7 @@ class JadwalMUController extends Controller
             'peruntukan' => 'required'
         ]);
 
-        $validateData['alamat_id'] = auth()->user()->alamatudd_id;
+        // $validateData['alamat_id'] = auth()->user()->alamatudd_id;
 
         JadwalMU::create($validateData);
 

@@ -2,11 +2,11 @@
     <img src="img/PMI.png" alt="Logo PMI" style="width: 6.5rem"/>
 
     <div class="navbar-nav_">
-        <a href="/">HOME</a>
-        <a href="/jadwalmu">JADWAL MU</a>
-        <a href="#">STOK DARAH</a>
-        <a href="#">ALAMAT UDD</a>
-        <a href="#">MEDIA & PUBLIKASI</a>
+        <a href="/" class="{{ Request::is('/') ? 'active' : '' }}">HOME</a>
+        <a href="/jadwalmu" class="{{ Request::is('jadwalmu*') ? 'active' : '' }}">JADWAL MU</a>
+        <a href="/stokdarah" class="{{ Request::is('stokdarah*') ? 'active' : '' }}">STOK DARAH</a>
+        <a href="/alamatudd" class="{{ Request::is('alamatudd*') ? 'active' : '' }}">ALAMAT UDD</a>
+        <a href="/mediapublikasi" class="{{ Request::is('mediapublikasi*') ? 'active' : '' }}">MEDIA & PUBLIKASI</a>
     </div>
 
     <div class="navbar-extra_">

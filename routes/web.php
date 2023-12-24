@@ -7,10 +7,6 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\JadwalMUController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\StokDarahController;
-use App\Models\JadwalMU;
-use App\Models\AlamatUDD;
-use App\Models\StokDarah;
-use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,6 +22,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [LandingController::class, 'home']);
 Route::get('/jadwalmu', [LandingController::class, 'jadwalmu']);
+Route::get('/stokdarah', [LandingController::class, 'stokdarah']);
+Route::get('/alamatudd', [LandingController::class, 'alamatudd']);
+Route::get('/mediapublikasi', [LandingController::class, 'mediapublikasi']);
 
 // Registrasi
 Route::get('/register', [RegistrasiController::class, 'index']);
