@@ -2,27 +2,33 @@
 
 @section('container')
 
-    <!-- Page pre-title -->
-    <div class="page-pretitle">
-        <a href="/dashboard" class="text-secondary">/dashboard</a><a href="/dashboard/alamatudd" class="text-secondary">/alamatUDD</a>/create
+{{-- Page Header --}}
+<div class="page-header d-print-none">
+  <div class="container-xl">
+    <div class="row g-2 align-items-center">
+  
+      <div class="col">
+        <!-- Page pre-title -->
+        <div class="page-pretitle">
+          <a href="/dashboard" class="text-secondary">/dashboard</a><a href="/dashboard/alamatudd" class="text-secondary">/alamatUDD</a>/create
         </div>
         <h2 class="page-title">
-        Create Alamat Unit Donor Darah
+          Create Alamat Unit Donor Darah
         </h2>
-
+      </div>
+  
     </div>
-</div>
-</div>
+  </div>
 </div>
 
 <!-- Page body -->
 <div class="page-body">
-<div class="container-xl">
-  <div class="row row-deck row-cards">
+  <div class="container-xl">
+    <div class="row row-deck row-cards">
 
-    <div class="col-lg-12">
+      <div class="col-lg-12">
         <div class="row row-cards">
-            <div class="col-12">
+          <div class="col-12">
 
                 <form action="/dashboard/alamatudd" method="POST" class="card">
 
@@ -70,8 +76,12 @@
 
                 </form>
                 
-            </div>
-        </div>
-    </div>    
+          </div>    
+        </div>            
+      </div>
+
+    </div>
+  </div>    
+</div>    
 
 @endsection
