@@ -45,7 +45,13 @@
     <link rel="stylesheet" href="/css/style.css">
     <!-- Icons -->
     <script src="https://kit.fontawesome.com/9c45ff2d1a.js" crossorigin="anonymous"></script>
-
+    {{-- GFont --}}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap"
+      rel="stylesheet"
+    />
     <style>
 
       :root {
@@ -81,7 +87,7 @@
           <h1 class="navbar-brand">
             <img src="/img/PMI1.png" style="width: 3rem; height: 3rem" class="navbar-brand-image mb-3">
             <div class="d-block">
-              <span style="font-weight: 1000">UDD <span style="color: #e60000">PMI</span></span> 
+              <span style="font-weight: 1000">UDD <span style="color: #e60000">PMI</span></span>
               <p>Jawa Tengah</p>
             </div>
           </h1>
@@ -105,7 +111,7 @@
 
             {{-- Sidebar =========================================================================================================================== --}}
             <ul class="navbar-nav">
-              
+
                 @include('v_dashboard.layouts.partials.sidebar')
 
             </ul>
@@ -113,7 +119,7 @@
           </div>
         </div>
       </aside>
-      
+
       <!-- Navbar =========================================================================================================================== -->
       <header class="navbar navbar-expand-md d-none d-lg-flex d-print-none" >
         <div class="container-xl">
@@ -134,7 +140,7 @@
               </a>
             </div>
 
-            {{-- Profile =========================================================================================================================== --}} 
+            {{-- Profile =========================================================================================================================== --}}
             <div class="nav-item dropdown">
               <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown" aria-label="Open user menu">
                 <span class="avatar avatar-sm" style="background-image: url(/template/static/avatars/000m.jpg)"></span>
@@ -153,16 +159,16 @@
                 <form action="/logout" method="POST">
 
                   @csrf
-          
+
                   <button type="submit" class="dropdown-item"><i class="bi bi-box-arrow-right"></i>Logout</button>
-                  
+
                 </form>
 
               </div>
             </div>
 
           </div>
-          
+
           {{-- Search =========================================================================================================================== --}}
           <div class="collapse navbar-collapse" id="navbar-menu">
             <div>
