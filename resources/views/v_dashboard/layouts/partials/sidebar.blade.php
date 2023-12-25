@@ -1,16 +1,17 @@
 <div class="sidebar-heading mb-3">
-  <div class="d-flex justify-content-start align-items-center rounded py-1 ps-3 ms-2" style="background-color: #cc0000">
+  <div class="d-flex justify-content-start align-items-center rounded py-1 px-2 ms-2" style="background-color: #cc0000">
     <img src="/img/user/default.jpg" class="rounded-circle" width="50">
     <div class="ps-2 text-white">
-      <p class="mb-0 fw-bold">{{ auth()->user()->name }}</p>
+      <p class="mb-0 fw-bold" style="line-height: 1rem">{{ auth()->user()->name }}</p>
       <p class="mb-0 text-uppercase" style="font-size: 0.7em;">{{ auth()->user()->AlamatUDD->udd_kabkot }}</p>
     </div>
   </div>
 </div>
 
+<hr class="mt-0 mb-0 ms-2">
 {{-- ======================================================================== --}}
 
-<li class="side-link_ nav-item">
+<li class="side-link_ nav-item mt-3">
     <a class="nav-link {{ Request::is('dashboard') ? 'active-side' : '' }}" href="/dashboard" >
       <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/home -->
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l-2 0l9 -9l9 9l-2 0" /><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" /><path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" /></svg>      
@@ -21,8 +22,8 @@
     </a>
 </li>
 
-<h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-uppercase" style="color: gray">
-  <span>Dashboard</span>
+<h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-2 mb-0 text-uppercase" style="color: gray">
+  <span>Umum</span>
 </h6>
 
 
@@ -57,4 +58,19 @@
         Jadwal Mobile Unit
       </span>
     </a>
+</li>
+
+<h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-2 mb-0 text-uppercase" style="color: gray">
+  <span>Media</span>
+</h6>
+
+<li class="side-link_ nav-item">
+  <a class="nav-link {{ Request::is('dashboard/jadwalmu*') ? 'active-side' : '' }}" href="/dashboard/jadwalmu">
+    <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/home -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-stats" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" /><path d="M18 14v4h4" /><path d="M18 18m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" /><path d="M15 3v4" /><path d="M7 3v4" /><path d="M3 11h16" /></svg>      
+    </span>
+    <span class=" side-link-title_ nav-link-title">
+      Media & Publikasi
+    </span>
+  </a>
 </li>
