@@ -29,24 +29,25 @@
 
                 <div class="col-12">
                     <div class="card">
-                        <div class="card-body">
-                          <p class="fw-bold mb-0" style="font-size: 1.5em">Selamat {{ $waktu }}, <span style="color: #e60000">Camela Devs</span></p>
-                          {{-- <div class="ps-2 fw-bold" style="border-left: #e60000 solid 2px">
-                              <p class="text-secondary mb-0">UDD PMI KOTA SEMARANG</p>
-                              <div class="" style="font-size: 0.8em">
-                                <p class="mb-0">Jl MGR Soegijopranoto SJ No. 31 dan 35</p>
-                                <p class="mb-0">024 - 3515050</p>
-                                <p class="mb-0">uddpmismg@yahoo.com</p>
-                              </div>
-                          </div> --}}
+                        <div class="d-flex card-body align-items-center" style="justify-content: space-between">
+                            <div class="">
+                                <p class="fw-bold mb-0" style="font-size: 1.5em; line-height: 1.3em">Selamat {{ $waktu }}, <span style="color: #e60000; font-weight: bold"> <br> Camela Desvita Putri</span></p>
+                            </div>
+                            <div class="">
+                                <a href="" class="btn rounded-pill text-white px-3 py-2" style="background-color: #cc0000">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" /><path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z" /><path d="M16 5l3 3" /></svg>
+                                    Edit
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-12">
+                {{-- <div class="col-12">
                     <div class="card">
-                        <div class="card-body d-flex" style="flex-wrap: wrap">
-                            <div class="" style="width: 500px; height: 250px;">
+                        <div class="card-body">
+
+                            <div class="">
                                 <div class="card-title mb-1" style="font-weight: bold">
                                     Detail Unit Donor Darah
                                 </div>
@@ -65,138 +66,14 @@
                                 </div>
                             </div>
 
-                            {{-- Stok Darah --}}
-                            <div class="col-sm-6 col-lg-2">
-                                <div class="card card-sm">
-                                    <div class="card-body">
-                                        <div class="row align-items-center">
-                                            <div class="col-auto">
-                                                <span
-                                                    class="bg-primary text-white avatar"><!-- Download SVG icon from http://tabler-icons.io/i/currency-dollar -->
-                                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24"
-                                                        height="24" viewBox="0 0 24 24" stroke-width="2"
-                                                        stroke="currentColor" fill="none" stroke-linecap="round"
-                                                        stroke-linejoin="round">
-                                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                        <path
-                                                            d="M16.7 8a3 3 0 0 0 -2.7 -2h-4a3 3 0 0 0 0 6h4a3 3 0 0 1 0 6h-4a3 3 0 0 1 -2.7 -2" />
-                                                        <path d="M12 3v3m0 12v3" />
-                                                    </svg>
-                                                </span>
-                                            </div>
-                                            <div class="col">
-                                                <div class="font-weight-medium">
-                                                    132 Sales
-                                                </div>
-                                                <div class="text-secondary">
-                                                    12 waiting payments
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-lg-3">
-                                <div class="card card-sm">
-                                    <div class="card-body">
-                                        <div class="row align-items-center">
-                                            <div class="col-auto">
-                                                <span
-                                                    class="bg-primary text-white avatar"><!-- Download SVG icon from http://tabler-icons.io/i/currency-dollar -->
-                                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24"
-                                                        height="24" viewBox="0 0 24 24" stroke-width="2"
-                                                        stroke="currentColor" fill="none" stroke-linecap="round"
-                                                        stroke-linejoin="round">
-                                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                        <path
-                                                            d="M16.7 8a3 3 0 0 0 -2.7 -2h-4a3 3 0 0 0 0 6h4a3 3 0 0 1 0 6h-4a3 3 0 0 1 -2.7 -2" />
-                                                        <path d="M12 3v3m0 12v3" />
-                                                    </svg>
-                                                </span>
-                                            </div>
-                                            <div class="col">
-                                                <div class="font-weight-medium">
-                                                    132 Sales
-                                                </div>
-                                                <div class="text-secondary">
-                                                    12 waiting payments
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-lg-3">
-                                <div class="card card-sm">
-                                    <div class="card-body">
-                                        <div class="row align-items-center">
-                                            <div class="col-auto">
-                                                <span
-                                                    class="bg-primary text-white avatar"><!-- Download SVG icon from http://tabler-icons.io/i/currency-dollar -->
-                                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24"
-                                                        height="24" viewBox="0 0 24 24" stroke-width="2"
-                                                        stroke="currentColor" fill="none" stroke-linecap="round"
-                                                        stroke-linejoin="round">
-                                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                        <path
-                                                            d="M16.7 8a3 3 0 0 0 -2.7 -2h-4a3 3 0 0 0 0 6h4a3 3 0 0 1 0 6h-4a3 3 0 0 1 -2.7 -2" />
-                                                        <path d="M12 3v3m0 12v3" />
-                                                    </svg>
-                                                </span>
-                                            </div>
-                                            <div class="col">
-                                                <div class="font-weight-medium">
-                                                    132 Sales
-                                                </div>
-                                                <div class="text-secondary">
-                                                    12 waiting payments
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-lg-3">
-                                <div class="card card-sm">
-                                    <div class="card-body">
-                                        <div class="row align-items-center">
-                                            <div class="col-auto">
-                                                <span
-                                                    class="bg-primary text-white avatar"><!-- Download SVG icon from http://tabler-icons.io/i/currency-dollar -->
-                                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24"
-                                                        height="24" viewBox="0 0 24 24" stroke-width="2"
-                                                        stroke="currentColor" fill="none" stroke-linecap="round"
-                                                        stroke-linejoin="round">
-                                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                        <path
-                                                            d="M16.7 8a3 3 0 0 0 -2.7 -2h-4a3 3 0 0 0 0 6h4a3 3 0 0 1 0 6h-4a3 3 0 0 1 -2.7 -2" />
-                                                        <path d="M12 3v3m0 12v3" />
-                                                    </svg>
-                                                </span>
-                                            </div>
-                                            <div class="col">
-                                                <div class="font-weight-medium">
-                                                    132 Sales
-                                                </div>
-                                                <div class="text-secondary">
-                                                    12 waiting payments
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-
                         </div>
                     </div>
 
 
 
-                </div>
+                </div> --}}
 
-                {{-- Info Kecil --}}
+                {{-- Stok Darah --}}
                 <div class="col-12">
                     <div class="row row-cards">
 
@@ -205,25 +82,16 @@
                                 <div class="card-body">
                                     <div class="row align-items-center">
                                         <div class="col-auto">
-                                            <span
-                                                class="bg-primary text-white avatar"><!-- Download SVG icon from http://tabler-icons.io/i/currency-dollar -->
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24"
-                                                    height="24" viewBox="0 0 24 24" stroke-width="2"
-                                                    stroke="currentColor" fill="none" stroke-linecap="round"
-                                                    stroke-linejoin="round">
-                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                    <path
-                                                        d="M16.7 8a3 3 0 0 0 -2.7 -2h-4a3 3 0 0 0 0 6h4a3 3 0 0 1 0 6h-4a3 3 0 0 1 -2.7 -2" />
-                                                    <path d="M12 3v3m0 12v3" />
-                                                </svg>
+                                            <span class="">
+                                                <img src="/img/ilustrasi/dd-goldaA.png" width="75" height="75">
                                             </span>
                                         </div>
                                         <div class="col">
-                                            <div class="font-weight-medium">
-                                                132 Sales
+                                            <div class="text-uppercase" style="color: gray">
+                                                <h5 class="mb-0">Golda A</h5>
                                             </div>
-                                            <div class="text-secondary">
-                                                12 waiting payments
+                                            <div class="" style="font-size: 2.5em; font-weight: 700; color: #e60000">
+                                                200
                                             </div>
                                         </div>
                                     </div>
@@ -236,26 +104,16 @@
                                 <div class="card-body">
                                     <div class="row align-items-center">
                                         <div class="col-auto">
-                                            <span
-                                                class="bg-green text-white avatar"><!-- Download SVG icon from http://tabler-icons.io/i/shopping-cart -->
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24"
-                                                    height="24" viewBox="0 0 24 24" stroke-width="2"
-                                                    stroke="currentColor" fill="none" stroke-linecap="round"
-                                                    stroke-linejoin="round">
-                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                    <path d="M6 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-                                                    <path d="M17 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-                                                    <path d="M17 17h-11v-14h-2" />
-                                                    <path d="M6 5l14 1l-1 7h-13" />
-                                                </svg>
+                                            <span class="">
+                                                <img src="/img/ilustrasi/dd-goldaB.png" width="75" height="75">
                                             </span>
                                         </div>
                                         <div class="col">
-                                            <div class="font-weight-medium">
-                                                78 Orders
+                                            <div class="text-uppercase" style="color: gray">
+                                                <h5 class="mb-0">Golda B</h5>
                                             </div>
-                                            <div class="text-secondary">
-                                                32 shipped
+                                            <div class="" style="font-size: 2.5em; font-weight: 700; color: #e60000">
+                                                200
                                             </div>
                                         </div>
                                     </div>
@@ -268,24 +126,16 @@
                                 <div class="card-body">
                                     <div class="row align-items-center">
                                         <div class="col-auto">
-                                            <span
-                                                class="bg-twitter text-white avatar"><!-- Download SVG icon from http://tabler-icons.io/i/brand-twitter -->
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24"
-                                                    height="24" viewBox="0 0 24 24" stroke-width="2"
-                                                    stroke="currentColor" fill="none" stroke-linecap="round"
-                                                    stroke-linejoin="round">
-                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                    <path
-                                                        d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c0 -.249 1.51 -2.772 1.818 -4.013z" />
-                                                </svg>
+                                            <span class="">
+                                                <img src="/img/ilustrasi/dd-goldaAB.png" width="75" height="75">
                                             </span>
                                         </div>
                                         <div class="col">
-                                            <div class="font-weight-medium">
-                                                623 Shares
+                                            <div class="text-uppercase" style="color: gray">
+                                                <h5 class="mb-0">Golda AB</h5>
                                             </div>
-                                            <div class="text-secondary">
-                                                16 today
+                                            <div class="" style="font-size: 2.5em; font-weight: 700; color: #e60000">
+                                                200
                                             </div>
                                         </div>
                                     </div>
@@ -298,24 +148,16 @@
                                 <div class="card-body">
                                     <div class="row align-items-center">
                                         <div class="col-auto">
-                                            <span
-                                                class="bg-facebook text-white avatar"><!-- Download SVG icon from http://tabler-icons.io/i/brand-facebook -->
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24"
-                                                    height="24" viewBox="0 0 24 24" stroke-width="2"
-                                                    stroke="currentColor" fill="none" stroke-linecap="round"
-                                                    stroke-linejoin="round">
-                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                    <path
-                                                        d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" />
-                                                </svg>
+                                            <span class="">
+                                                <img src="/img/ilustrasi/dd-goldaO.png" width="75" height="75">
                                             </span>
                                         </div>
                                         <div class="col">
-                                            <div class="font-weight-medium">
-                                                132 Likes
+                                            <div class="text-uppercase" style="color: gray">
+                                                <h5 class="mb-0">Golda O</h5>
                                             </div>
-                                            <div class="text-secondary">
-                                                21 today
+                                            <div class="" style="font-size: 2.5em; font-weight: 700; color: #e60000">
+                                                200
                                             </div>
                                         </div>
                                     </div>
