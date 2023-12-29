@@ -11,9 +11,17 @@ class StokDarahController extends Controller
 {
     public function index()
     {
+
+        $query = StokDarah::orderBy('updated_at', 'DESC');
+
+        if (!auth()->user()->isAdmin) {
+            $query->where('alamat_id', auth()->user()->alamatudd_id);
+        }
+
+        $dataStokDarah = $query->get();
+
         return view('v_dashboard.stokdarah.index', [
-            'dataStokDarah' => StokDarah::where('id', auth()->user()->alamatudd_id)->get()
-            // 'dataStokDarah' => StokDarah::all()
+            'dataStokDarah' => $dataStokDarah,
         ]);
     }
 
@@ -31,7 +39,7 @@ class StokDarahController extends Controller
     public function store(Request $request)
     {
         $validateData = $request->validate([
-            'alamat_id' => 'required|unique:stokdarah',
+            'alamat_id' => 'required',
             'golda_a' => 'required|numeric',
             'golda_b' => 'required|numeric',
             'golda_ab' => 'required|numeric',

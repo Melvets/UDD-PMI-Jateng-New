@@ -11,31 +11,18 @@ class JadwalMUController extends Controller
 {
     public function index()
     {
-        if(auth()->user()->isAdmin) {
-            $query = JadwalMU::orderBy('tanggal', 'DESC')->orderBy('jam_mulai', 'ASC');
 
-            if(request('search')) {
-                $query = JadwalMU::where('tempat', 'like', '%' . request('search') . '%')
-                                    ->orWhere('alamat', 'like', '%' . request('search') . '%')
-                                    ->orWhere('kabkot', 'like', '%' . request('search') . '%')
-                                    ->orWhere('peruntukan', 'like', '%' . request('search') . '%');
+        $query = JadwalMU::orderBy('tanggal', 'DESC')->orderBy('jam_mulai', 'ASC');
 
-                $query->orderBy('tanggal', 'DESC')->orderBy('jam_mulai', 'ASC');
-            }
-            
-        } else {
-            $query = JadwalMU::where('alamat_id', auth()->user()->alamatudd_id);
-            $query->orderBy('tanggal', 'DESC')->orderBy('jam_mulai', 'ASC');
+        if (!auth()->user()->isAdmin) {
+            $query->where('alamat_id', auth()->user()->alamatudd_id);
+        }
 
-            if(request('search')) {
-                $query = JadwalMU::where('tempat', 'like', '%' . request('search') . '%')
-                                    ->orWhere('alamat', 'like', '%' . request('search') . '%')
-                                    ->orWhere('kabkot', 'like', '%' . request('search') . '%')
-                                    ->orWhere('peruntukan', 'like', '%' . request('search') . '%');
-
-                $query->where('alamat_id', auth()->user()->alamatudd_id);
-                $query->orderBy('tanggal', 'DESC')->orderBy('jam_mulai', 'ASC');
-            }
+        if(request('search')) {
+            $query->where('tempat', 'like', '%' . request('search') . '%')
+                    ->orWhere('alamat', 'like', '%' . request('search') . '%')
+                    ->orWhere('kabkot', 'like', '%' . request('search') . '%')
+                    ->orWhere('peruntukan', 'like', '%' . request('search') . '%');
         }
 
         $dataJadwalMU = $query->paginate(5)->appends(['search' => request('search')]);
