@@ -1,0 +1,70 @@
+=======================================================
+
+DATABASE
+
+1. alamatudd
+	bigint	: id		(key)
+	varchar	: udd_kabkot 	(not null)
+	varchar	: alamat 		(null)
+	varchar	: telp 		(null)
+	varchar	: email 		(null)
+	date	: created_at	 
+	date	: updated_at		
+
+2. Stok Darah
+	bigint	: id		(key)
+	bigint	: alamatudd_id	(foreign)*
+	int	: golda_a		(not null)
+	int	: golda_b		(not null)
+	int	: golda_ab		(not null)
+	int	: golda_o		(not null)
+	date	: created_at	 
+	date	: updated_at
+
+3. Jadwal MU
+	bigint	: id 		(key)
+	bigint	: alamatudd_id	(foreign)*
+	varchar	: tempat		(not null)
+	varchar	: alamat		(not null)
+	varchar	: kabkot		(not null)
+	time	: jam_mulai	(not null)
+	time	: jam_selesai	(not null)
+	date	: tanggal		(not null)
+	varchar	: peruntukan	(not null)
+	date	: created_at	 
+	date	: updated_at
+
+=======================================================
+
+FRONTEND
+
+User:
+1. Guest
+
+Can / Can't:
++ Melihat data 
+	(1) Alamat UDD
+		a) database
+		udd_kabkot, alamat, telp, email, 
+		b) view
+		leaflet (map)
+	(2) Stok Darah
+		a) database
+		alamatudd_id, golda_a, golda_b, golda_ab, golda_o, updated_at
+		b) view
+		tampilkan update terakhir
+	(3) Jadwal MU
+		a) database
+		alamatudd_id, tempat, alamat, kabkot, jam_mulai, jam_selesai, peruntukan
+		b) view
+		tampilkan hari ini, urut jam
+		c) search
+
+=======================================================
+
+BACKEND
+
+User: 
+1. Auth
+2. Admin
+
