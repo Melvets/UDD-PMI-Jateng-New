@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\StokDarah;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -19,8 +20,17 @@ class DashboardController extends Controller
             $waktu = 'Malam';
         }
 
+        $golda_a = StokDarah::where('alamat_id', auth()->user()->alamatudd_id)->sum('golda_a');
+        $golda_b = StokDarah::where('alamat_id', auth()->user()->alamatudd_id)->sum('golda_b');
+        $golda_ab = StokDarah::where('alamat_id', auth()->user()->alamatudd_id)->sum('golda_ab');
+        $golda_o = StokDarah::where('alamat_id', auth()->user()->alamatudd_id)->sum('golda_o');
+
         return view('v_dashboard.index', [
             'waktu' => $waktu,
+            'golda_a' => $golda_a,
+            'golda_b' => $golda_b,
+            'golda_ab' => $golda_ab,
+            'golda_o' => $golda_o,
         ]);
     }
 }

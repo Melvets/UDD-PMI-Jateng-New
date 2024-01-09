@@ -91,7 +91,7 @@
                                                 <h5 class="mb-0">Golda A</h5>
                                             </div>
                                             <div class="" style="font-size: 2.5em; font-weight: 700; color: #e60000">
-                                                200
+                                                {{ $golda_a }}
                                             </div>
                                         </div>
                                     </div>
@@ -113,7 +113,7 @@
                                                 <h5 class="mb-0">Golda B</h5>
                                             </div>
                                             <div class="" style="font-size: 2.5em; font-weight: 700; color: #e60000">
-                                                200
+                                                {{ $golda_b }}
                                             </div>
                                         </div>
                                     </div>
@@ -135,7 +135,7 @@
                                                 <h5 class="mb-0">Golda AB</h5>
                                             </div>
                                             <div class="" style="font-size: 2.5em; font-weight: 700; color: #e60000">
-                                                200
+                                                {{ $golda_ab }}
                                             </div>
                                         </div>
                                     </div>
@@ -157,7 +157,7 @@
                                                 <h5 class="mb-0">Golda O</h5>
                                             </div>
                                             <div class="" style="font-size: 2.5em; font-weight: 700; color: #e60000">
-                                                200
+                                                {{ $golda_o }}
                                             </div>
                                         </div>
                                     </div>
