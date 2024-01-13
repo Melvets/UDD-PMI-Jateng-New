@@ -1,15 +1,15 @@
 @extends('v_landing.layouts.main')
 
 @section('container')
-    
+
     <section>
-        <div class="container">
+        <div class="" style="margin: 0 15%">
 
             <h2 class="fw-bold fs-2 text-center" style="padding-top: 6.5rem"> JADWAL <span style="color: #e60000">MOBILE UNIT</span> </h2>
             <h6 class="text-center mb-4" style="font-size: 0.8em;">Jadwal Donor Darah Mobile Unit Hari Ini (tanggal <span style="color: #e60000">{{ date('d M Y') }}</span>)</h6>
 
             <form action="/jadwalmu" action="GET">
-            
+
               <div class="row justify-content-center">
                 <div class="col-lg-6">
                   <div class="input-group mb-3">
@@ -21,12 +21,12 @@
 
             </form>
 
-            
+
             <div class="d-flex" style="flex-wrap: wrap; justify-content: center; ">
-      
+
                 @foreach ($dataJadwalMU as $data)
-                    
-                <div class="card my-2" style="width: 13.5rem; font-size:0.8em; margin: 0 7px">
+
+                <div class="card my-2" style="width: 13.8rem; font-size:0.8em; margin: 0 7.6px">
                   <div class="card-header fw-bold text-white text-center" style="background-color: #e60000; font-size: 10px">{{ $data->AlamatUDD->udd_kabkot }}</div>
                   <div class="card-body py-2">
                     <div class="text-secondary mb-1">
@@ -40,10 +40,10 @@
                     <p class="fw-bold mt-0" style="font-size: 0.9em">{{ $data->peruntukan }}</p>
                   </div>
                 </div>
-                
+
                 @endforeach
-        
-              </div>  
+
+              </div>
 
         </div>
     </section>
