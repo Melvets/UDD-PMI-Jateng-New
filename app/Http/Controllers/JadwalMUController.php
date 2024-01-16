@@ -15,7 +15,7 @@ class JadwalMUController extends Controller
         $query = JadwalMU::orderBy('tanggal', 'DESC')->orderBy('jam_mulai', 'ASC');
 
         if (!auth()->user()->isAdmin) {
-            $query->where('alamat_id', auth()->user()->alamatudd_id);
+            $query->where('alamatudd_id', auth()->user()->alamatudd_id);
         }
 
         if(request('search')) {
@@ -42,7 +42,7 @@ class JadwalMUController extends Controller
     public function store(Request $request)
     {
         $validateData = $request->validate([
-            'alamat_id' => 'required',
+            'alamatudd_id' => 'required',
             'tempat' => 'required',
             'alamat'  => 'required',
             'kabkot' => 'required',
@@ -52,7 +52,7 @@ class JadwalMUController extends Controller
             'peruntukan' => 'required'
         ]);
 
-        // $validateData['alamat_id'] = auth()->user()->alamatudd_id;
+        // $validateData['alamatudd_id'] = auth()->user()->alamatudd_id;
 
         JadwalMU::create($validateData);
 
@@ -87,7 +87,7 @@ class JadwalMUController extends Controller
             'peruntukan' => 'required'
         ]);
 
-        $validateData['alamat_id'] = auth()->user()->alamatudd_id;
+        $validateData['alamatudd_id'] = auth()->user()->alamatudd_id;
 
         JadwalMU::where('id', $jadwalMU->id)->update($validateData);
 

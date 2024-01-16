@@ -16,11 +16,11 @@ class AlamatUDD extends Model
 
     public function User() : HasOne
     {
-        return $this->hasOne(User::class, 'alamat_id', 'id');
+        return $this->hasOne(User::class, 'alamatudd_id', 'id');
     }
 
     public function StokDarah() : HasMany
     {
-        return $this->hasMany(StokDarah::class, 'alamat_id', 'id');
+        return $this->hasMany(StokDarah::class, 'alamatudd_id', 'id');
     }
 }

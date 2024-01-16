@@ -15,6 +15,6 @@ class StokDarah extends Model
 
     public function AlamatUDD() : BelongsTo
     {
-        return $this->belongsTo(AlamatUDD::class, 'alamat_id', 'id');
+        return $this->belongsTo(AlamatUDD::class, 'alamatudd_id', 'id');
     }
 }

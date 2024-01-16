@@ -20,10 +20,10 @@ class DashboardController extends Controller
             $waktu = 'Malam';
         }
 
-        $golda_a = StokDarah::where('alamat_id', auth()->user()->alamatudd_id)->sum('golda_a');
-        $golda_b = StokDarah::where('alamat_id', auth()->user()->alamatudd_id)->sum('golda_b');
-        $golda_ab = StokDarah::where('alamat_id', auth()->user()->alamatudd_id)->sum('golda_ab');
-        $golda_o = StokDarah::where('alamat_id', auth()->user()->alamatudd_id)->sum('golda_o');
+        $golda_a = StokDarah::where('alamatudd_id', auth()->user()->alamatudd_id)->sum('golda_a');
+        $golda_b = StokDarah::where('alamatudd_id', auth()->user()->alamatudd_id)->sum('golda_b');
+        $golda_ab = StokDarah::where('alamatudd_id', auth()->user()->alamatudd_id)->sum('golda_ab');
+        $golda_o = StokDarah::where('alamatudd_id', auth()->user()->alamatudd_id)->sum('golda_o');
 
         return view('v_dashboard.index', [
             'waktu' => $waktu,

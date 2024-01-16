@@ -15,7 +15,7 @@ class StokDarahController extends Controller
         $query = StokDarah::orderBy('updated_at', 'DESC');
 
         if (!auth()->user()->isAdmin) {
-            $query->where('alamat_id', auth()->user()->alamatudd_id);
+            $query->where('alamatudd_id', auth()->user()->alamatudd_id);
         }
 
         $dataStokDarah = $query->get();
@@ -39,7 +39,7 @@ class StokDarahController extends Controller
     public function store(Request $request)
     {
         $validateData = $request->validate([
-            'alamat_id' => 'required',
+            'alamatudd_id' => 'required',
             'golda_a' => 'required|numeric',
             'golda_b' => 'required|numeric',
             'golda_ab' => 'required|numeric',
@@ -69,7 +69,7 @@ class StokDarahController extends Controller
         $stokDarah = StokDarah::find($id);
 
         $validateData = $request->validate([
-            'alamat_id' => 'required',
+            'alamatudd_id' => 'required',
             'golda_a' => 'required|numeric',
             'golda_b' => 'required|numeric',
             'golda_ab' => 'required|numeric',
