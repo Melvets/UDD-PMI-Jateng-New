@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('stokdarah', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('alamat_id');
+            $table->foreignId('alamatudd_id');
             $table->integer('golda_a');
             $table->integer('golda_b');
             $table->integer('golda_ab');

@@ -1,9 +1,9 @@
 @extends('v_landing.layouts.main')
 
 @section('container')
-    <div class="" style="margin: 0 15%">
+    <div class="" style="margin: 0 15%; padding-top: 6.5rem">
 
-        <h2 class="fw-bold fs-1 text-center" style="padding-top: 6.5rem"> STOK <span style="color: #e60000">DARAH</span> </h2>
+        <h2 class="fw-bold fs-2 text-center"> STOK <span style="color: #e60000">DARAH</span> </h2>
         <h6 class="text-center mb-4" style="font-size: 0.8em;">Stok darah yang ditampilkan dapat berbeda dengan kondisi stok terkini</h6>
 
         <hr style="margin: 1.5rem 10rem">

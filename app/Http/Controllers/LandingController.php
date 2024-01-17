@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AlamatUDD;
 use Illuminate\Http\Request;
 use App\Models\JadwalMU;
 use App\Models\StokDarah;
@@ -64,6 +65,12 @@ class LandingController extends Controller
             'golda_b' => $golda_b,
             'golda_ab' => $golda_ab,
             'golda_o' => $golda_o,
+        ]);
+    }
+
+    public function alamatudd() {
+        return view('v_landing.alamatudd', [
+            'dataAlamatUDD' => AlamatUDD::all(),
         ]);
     }
 }

@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('jadwalmu', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('alamat_id');
+            $table->foreignId('alamatudd_id');
             $table->string('tempat');
             $table->string('alamat');
             $table->string('kabkot');
