@@ -7,6 +7,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\JadwalMUController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\StokDarahController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,12 +38,7 @@ Route::post('/logout', [LoginController::class, 'logout']);
 
 // Dashboard
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
-
-// Dashboard (AlamatUDD)
 Route::resource('/dashboard/alamatudd', AlamatUDDController::class)->middleware('auth');
-
-// Dashboard (StokDarah)
 Route::resource('/dashboard/stokdarah', StokDarahController::class)->middleware('auth');
-
-// Dashboard(Jadwal MU)
 Route::resource('/dashboard/jadwalmu', JadwalMUController::class)->middleware('auth');
+Route::resource('/dashboard/users', UsersController::class)->middleware('admin');

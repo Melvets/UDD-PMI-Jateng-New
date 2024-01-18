@@ -12,7 +12,7 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <title>UDD PMI Jawa Tengah | DASHBOARD</title>
+    <title>UDD PMI Jawa Tengah | Dashboard</title>
     <script defer data-api="/stats/api/event" data-domain="preview.tabler.io" src="/stats/js/script.js"></script>
     <meta name="msapplication-TileColor" content=""/>
     <meta name="theme-color" content=""/>
@@ -21,8 +21,8 @@
     <meta name="mobile-web-app-capable" content="yes"/>
     <meta name="HandheldFriendly" content="True"/>
     <meta name="MobileOptimized" content="320"/>
-    <link rel="icon" href="/template/favicon.ico" type="image/x-icon"/>
-    <link rel="shortcut icon" href="/template/favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="/img/PMI1.png" type="image/x-icon"/>
+    <link rel="shortcut icon" href="/img/PMI1.png" type="image/x-icon"/>
     <meta name="description" content="Tabler comes with tons of well-designed components and features. Start your adventure with Tabler and make your dashboard great again. For free!"/>
     <meta name="canonical" content="https://preview.tabler.io/layout-combo.html">
     <meta name="twitter:image:src" content="https://preview.tabler.io/static/og.png">
@@ -143,24 +143,20 @@
             {{-- Profile =========================================================================================================================== --}}
             <div class="nav-item dropdown">
               <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown" aria-label="Open user menu">
-                <span class="avatar avatar-sm" style="background-image: url(/template/static/avatars/000m.jpg)"></span>
-                <div class="d-none d-xl-block ps-2">
-                  <div>{{ auth()->user()->name }}</div>
-                  <div class="mt-1 small text-secondary">UI Designer</div>
-                </div>
+                <span class="avatar avatar-sm rounded-circle" style="background-image: url(/img/user/default.jpg)"></span>
               </a>
               <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                <a href="#" class="dropdown-item">Status</a>
+                {{-- <a href="#" class="dropdown-item">Status</a>
                 <a href="/template/profile.html" class="dropdown-item">Profile</a>
                 <a href="#" class="dropdown-item">Feedback</a>
                 <div class="dropdown-divider"></div>
-                <a href="/template/settings.html" class="dropdown-item">Settings</a>
+                <a href="/template/settings.html" class="dropdown-item">Settings</a> --}}
 
                 <form action="/logout" method="POST">
 
                   @csrf
 
-                  <button type="submit" class="dropdown-item"><i class="bi bi-box-arrow-right"></i>Logout</button>
+                  <button type="submit" class="dropdown-item" style="color: #e60000; font-weight: bold"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-logout" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="#252525" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" /><path d="M9 12h12l-3 -3" /><path d="M18 15l3 -3" /></svg><span class="ms-1">Logout</span></button>
 
                 </form>
 
