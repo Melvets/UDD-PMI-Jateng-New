@@ -2,7 +2,7 @@
 
 @section('container')
 
-    <section>
+    <section style="min-height: 100%; position: relative;">
         <div class="" style="margin: 0 15%">
 
             <h2 class="fw-bold fs-2 text-center" style="padding-top: 6.5rem"> JADWAL <span style="color: #e60000">MOBILE UNIT</span> </h2>
@@ -43,7 +43,7 @@
 
                 @endforeach
 
-              </div>
+            </div>
 
         </div>
     </section>

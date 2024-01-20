@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('alamat');
             $table->string('telp');
             $table->string('email')->unique();
+            $table->string('titik_koordinat');
             $table->timestamps();
         });
     }

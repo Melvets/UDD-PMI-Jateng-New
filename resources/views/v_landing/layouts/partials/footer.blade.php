@@ -1,9 +1,11 @@
+{{-- FIXED FOOTER --}}
+
 <section class="footer_" style="padding: 2rem 0 0 0">
 
     <div class="" style="background-color: #CC0000; padding: 2rem 15%">
 
       <div class="d-flex" style="flex-wrap: wrap; justify-content: space-between;">
-      
+
         <div class="text-white" style="font-size: 12px">
           <p class="fw-bold mb-0" style="font-size: 18px">UDD PMI Jawa Tengah</p>
           <p class="mb-2" style="width: 345px">Jalan Arum Sari Raya, RT. 11 RW. 02, Sambiroto, Kec. Tembalang, Kota Semarang, Jawa Tengah 59111</p>
@@ -27,11 +29,11 @@
       </div>
 
     </div>
-    
+
     <div class="" style="background-color: #A90000; padding: 0.5rem 15%;">
 
       <div class="d-flex text-white" style="flex-wrap: wrap; justify-content: space-between; align-items: center">
-      
+
         <div class="">
           <p class="mb-0" style="font-size: 12px;">Copyright © PMI Jawa Tengah 2023</p>
         </div>
@@ -53,7 +55,7 @@
           </a>
           <a href="" class="iconf_ mx-1">
             <div class="rounded-circle position-relative" style="width: 31px; height: 31px;">
-              <img src="/img/icon/brand-facebook-filled.svg" class="position-absolute top-50 start-50 translate-middle">  
+              <img src="/img/icon/brand-facebook-filled.svg" class="position-absolute top-50 start-50 translate-middle">
             </div>
           </a>
         </div>

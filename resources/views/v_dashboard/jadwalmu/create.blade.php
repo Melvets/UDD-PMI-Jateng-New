@@ -140,6 +140,11 @@
                                                     <option value="Kota Surakarta">Kota Surakarta</option>
                                                     <option value="Kota Tegal">Kota Tegal</option>
                                                 </select>
+                                                @error('kabkot')
+                                                    <div class="invalid-feedback">
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
                                             </div>
                                         </div>
 

@@ -21,43 +21,22 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
-        AlamatUDD::create([
-            'udd_kabkot' => 'UDD PMI Kota Semarang',
-            'alamat' => 'Jl MGR Soegijopranoto SJ No. 31 dan 35',
-            'telp' => '024 - 3515050',
-            'email' => 'uddpmismg@yahoo.com'
-        ]);
-
-        AlamatUDD::create([
-            'udd_kabkot' => 'UDD PMI Kabupaten Semarang',
-            'alamat' => 'Jl. Gatot Subroto No.96 Ungaran',
-            'telp' => '024 - 76902606',
-            'email' => 'udd_kabsemarang@pmi.or.id'            
-        ]);
-
-        AlamatUDD::create([
-            'udd_kabkot' => 'UDD PMI Kota Tegal',
-            'alamat' => 'Jl. Aiptu KS. Tubun No. 8',
-            'telp' => '0283 - 343244',
-            'email' => 'udd_kotategal@pmi.or.id'            
-        ]);
-
         StokDarah::create([
-            'alamat_id' => 1,
+            'alamatudd_id' => 1,
             'golda_a' => 200,
             'golda_b' => 200,
             'golda_ab' => 200,
             'golda_o' => 200
         ]);
         StokDarah::create([
-            'alamat_id' => 2,
+            'alamatudd_id' => 2,
             'golda_a' => 100,
             'golda_b' => 100,
             'golda_ab' => 100,
             'golda_o' => 100
         ]);
         StokDarah::create([
-            'alamat_id' => 3,
+            'alamatudd_id' => 3,
             'golda_a' => 300,
             'golda_b' => 300,
             'golda_ab' => 300,
@@ -65,7 +44,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         JadwalMU::create([
-            'alamat_id' => 2,
+            'alamatudd_id' => 2,
             'tempat' => 'Hotel Java Heritage Purwokerto',
             'alamat' => 'Jl. Dr. Angka Kec. Purwokerto Timur',
             'kabkot' => 'Kabupaten Semarang',
@@ -74,9 +53,9 @@ class DatabaseSeeder extends Seeder
             'tanggal' => date('2023-12-23 00:00:00'),
             'peruntukan' => 'Umum',
         ]);
-        
+
         JadwalMU::create([
-            'alamat_id' => 1,
+            'alamatudd_id' => 1,
             'tempat' => 'Desa Bojongsari Kec. Kembaran',
             'alamat' => 'Jl. Balai Desa Bojongsari Kec. Kembaran',
             'kabkot' => 'Kota Semarang',
@@ -87,7 +66,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         JadwalMU::create([
-            'alamat_id' => 3,
+            'alamatudd_id' => 3,
             'tempat' => 'DESA DELEGTUKANG',
             'alamat' => 'Delegtukang Wiradesa',
             'kabkot' => 'Kota Tegal',
@@ -98,7 +77,8 @@ class DatabaseSeeder extends Seeder
         ]);
 
         User::create([
-            'name' => 'Camela Devs',
+            'first_name' => 'Camela',
+            'last_name' => 'Devs',
             'username' => 'meldsvt',
             'email' => 'camelaputri1@gmail.com',
             'alamatudd_id' => '1',
@@ -107,7 +87,8 @@ class DatabaseSeeder extends Seeder
         ]);
 
         User::create([
-            'name' => 'Rizky Apriansyah',
+            'first_name' => 'Rizky',
+            'last_name' => 'Apriansyah',
             'username' => 'kikap',
             'email' => 'rizkyap@gmail.com',
             'alamatudd_id' => '3',
@@ -115,7 +96,8 @@ class DatabaseSeeder extends Seeder
         ]);
 
         User::create([
-            'name' => 'Ned Saintra',
+            'first_name' => 'Nedd',
+            'last_name' => 'Saintra',
             'username' => 'nedstra',
             'email' => 'ned@gmail.com',
             'alamatudd_id' => '2',
