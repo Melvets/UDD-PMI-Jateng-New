@@ -91,21 +91,21 @@
                                     @foreach ($dataUsers as $data)
                                         <tr>
                                             <td><span class="text-secondary">{{ $loop->iteration }}</span></td>
-                                            <td>{{ $data->name }}</td>
+                                            <td>{{ $data->first_name }} {{ $data->last_name }}</td>
                                             <td>{{ $data->username }}</td>
                                             <td>{{ $data->email }}</td>
                                             <td>{{ $data->AlamatUDD->udd_kabkot }}</td>
-                                            <td>{{ $data->isAdmin }}</td>
-                                            <td>{{ $data->updated_at }}</td>
+                                            <td class="text-center">@if ($data->isAdmin) Admin @else - @endif</td>
+                                            <td>{{ \Carbon\Carbon::parse($data->updated_at)->format('d-m-Y (H:i)') }}</td>
                                             <td>
                                                 <div class="d-inline-flex">
-                                                    <a href="/dashboard/alamatudd/{{ $data->id }}/edit"
+                                                    <a href="/dashboard/users/{{ $data->id }}/edit"
                                                         class="btn btn-default text-green btn-md shadow rounded-2 p-2"
                                                         title="update"><i class="fas fa-pen"></i></a>
 
                                                     @can('admin')
 
-                                                    <form action="/dashboard/alamatudd/{{ $data->id }}" method="POST">
+                                                    <form action="/dashboard/users/{{ $data->id }}" method="POST">
 
                                                         @method('delete')
                                                         @csrf

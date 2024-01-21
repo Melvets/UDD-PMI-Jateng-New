@@ -4,7 +4,7 @@
 
     <div class="" style="margin: 0 15%; padding-top: 6.5rem">
 
-        <h2 class="fw-bold fs-1 text-center"> ALAMAT <span style="color: #e60000">UDD</span> </h2>
+        <h2 class="fw-bold fs-2 text-center"> ALAMAT <span style="color: #e60000">UNIT DONOR DARAH</span> </h2>
         <h6 class="text-center mb-4" style="font-size: 0.8em;">Alamat UDD PMI Kabupaten / Kota se-Jawa Tengah</h6>
 
         <hr style="margin: 1.5rem 10rem">

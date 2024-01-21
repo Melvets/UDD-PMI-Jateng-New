@@ -44,60 +44,96 @@
                                     <div class="col-md-6">
                                         <div class="mb-1">
                                             <label for="first_name" class="form-label required">Nama Depan</label>
-                                            <input type="text" name="first_name" id="first_name" class="form-control"
+                                            <input type="text" name="first_name" id="first_name" class="form-control @error('first_name') is-invalid @enderror"
                                                 placeholder="Wajib diisi ..." required>
+                                            @error('first_name')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
                                         </div>
                                     </div>
+
 
                                     <div class="col-md-6">
                                         <div class="mb-1">
                                             <label for="last_name" class="form-label">Nama Belakang</label>
-                                            <input type="text" name="last_name" id="last_name" class="form-control"
+                                            <input type="text" name="last_name" id="last_name" class="form-control @error('last_name') is-invalid @enderror"
                                                 placeholder="Masukkan nama belakang">
+                                            @error('last_name')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
                                         </div>
                                     </div>
 
                                     <div class="col-sm-6 col-md-4">
                                         <div class="mb-3">
                                             <label for="username" class="form-label">Username</label>
-                                            <input type="text" name="username" class="form-control"
+                                            <input type="text" name="username" class="form-control @error('username') is-invalid @enderror"
                                                 placeholder="Masukkan username ...">
+                                            @error('username')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
                                         </div>
                                     </div>
 
                                     <div class="col-md-4">
                                         <div class="mb-1">
                                             <label for="alamatudd_id" class="form-label required">UDD PMI Kabupaten/Kota</label>
-                                            <select class="form-select" id="alamatudd_id" name="alamatudd_id">
-                                                <option selected>--Pilih UDD PMI Kabupaten/Kota--</option>
+                                            <select class="form-select @error('alamatudd_id') is-invalid @enderror" id="alamatudd_id" name="alamatudd_id">
+                                                <option selected value="">--Pilih UDD PMI Kabupaten/Kota--</option>
                                                 @foreach ($dataAlamatUDD as $data)
                                                     <option value="{{ $data->id }}">{{ $data->udd_kabkot }}</option>
                                                 @endforeach
                                             </select>
+                                            @error('alamatudd_id')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
                                         </div>
                                     </div>
 
                                     <div class="col-md-4">
                                         <div class="mb-1">
                                             <label for="email" class="form-label required">Email</label>
-                                            <input type="email" name="email" id="email" class="form-control"
+                                            <input type="email" name="email" id="email" class="form-control @error('email') is-invalid @enderror"
                                                 placeholder="Wajib diisi ..." required>
+                                            @error('email')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
                                         </div>
                                     </div>
 
                                     <div class="col-md-4">
                                         <div class="mb-3">
                                             <label for="password" class="form-label required">Password</label>
-                                            <input type="password" name="password" class="form-control" id="password"
+                                            <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" id="password"
                                                 placeholder="Masukkan password" required>
+                                            @error('password')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
                                         </div>
                                     </div>
 
                                     <div class="col-md-4">
                                         <div class="mb-3">
-                                            <label for="ulangi_password" class="form-label required">Ulangi Password</label>
-                                            <input type="password" name="ulangi_password" class="form-control" id="ulangi_password"
+                                            <label for="password_confirmation" class="form-label required">Ulangi Password</label>
+                                            <input type="password" name="password_confirmation" class="form-control @error('password_confirmation') is-invalid @enderror" id="password_confirmation"
                                                 placeholder="Ulangi password" required>
+                                            @error('password_confirmation')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
                                         </div>
                                     </div>
 
