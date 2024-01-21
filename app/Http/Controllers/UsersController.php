@@ -47,10 +47,8 @@ class UsersController extends Controller
         //
     }
 
-    public function edit(User $user, $id)
+    public function edit(User $user)
     {
-        $user = User::find($id);
-
         return view('v_dashboard.users.edit', [
             'dataUsers' => $user,
             'dataAlamatUDD' => AlamatUDD::all(),
@@ -59,7 +57,31 @@ class UsersController extends Controller
 
     public function update(Request $request, User $user)
     {
-        //
+        $validateData = $request->validate([
+            'first_name' => 'required',
+            'last_name' => '',
+            'alamatudd_id' => 'required',
+            'isAdmin' => 'required',
+            // 'password' => 'required|confirmed|min:8',
+        ]);
+
+        // RUSAK! ==============
+        if($request->username != $user->username || $request->email != $user->email) {
+            $validateData['username'] = 'required|unique:users|min:5|lowercase';
+            $validateData['email'] = 'required|unique:users|email:dns';
+        }
+
+        if(isset($request->password)){
+            $validateData['password'] = 'required|confirmed|min:8';
+            if($request->password_confirmation == $validateData['password']) {
+                $validateData['password'] = Hash::make($validateData['password']);
+            }
+        }
+
+        // =====================
+
+        User::where('id', $user->id)->update($validateData);
+        return redirect('/dashboard/users')->with('success', 'Data berhasil diupdate!');
     }
 
     public function destroy(User $user)
