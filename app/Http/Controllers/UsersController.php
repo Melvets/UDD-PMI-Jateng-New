@@ -57,28 +57,43 @@ class UsersController extends Controller
 
     public function update(Request $request, User $user)
     {
-        $validateData = $request->validate([
+        $rules = [
             'first_name' => 'required',
             'last_name' => '',
             'alamatudd_id' => 'required',
             'isAdmin' => 'required',
             // 'password' => 'required|confirmed|min:8',
-        ]);
+            // 'password_confirmation' => 'required|same:password'
+        ];
 
-        // RUSAK! ==============
-        if($request->username != $user->username || $request->email != $user->email) {
-            $validateData['username'] = 'required|unique:users|min:5|lowercase';
-            $validateData['email'] = 'required|unique:users|email:dns';
+        // cek username
+        if($request->username != $user->username) {
+            $rules['username'] = 'required|unique:users|min:5|lowercase';
         }
 
+        // cek email
+        if ($request->email != $user->email) {
+            $rules['email'] = 'required|unique:users|email:dns';
+        }
+
+        // cek password
         if(isset($request->password)){
-            $validateData['password'] = 'required|confirmed|min:8';
-            if($request->password_confirmation == $validateData['password']) {
+            // $password = $request->validate(['password' => 'required|confirmed|min:8']);
+            if($request->password_confirmation == $request->password) {
+                $panggil = 'berhasil';
+
+                $rules['password'] = 'required|confirmed|min:8';
+                $validateData = $request->validate($rules['password']);
                 $validateData['password'] = Hash::make($validateData['password']);
+
+            } else {
+                $panggil = 'password salah';
             }
         }
 
-        // =====================
+        dd($validateData['password']);
+
+        $validateData = $request->validate($rules);
 
         User::where('id', $user->id)->update($validateData);
         return redirect('/dashboard/users')->with('success', 'Data berhasil diupdate!');
