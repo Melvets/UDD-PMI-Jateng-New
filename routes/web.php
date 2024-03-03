@@ -6,6 +6,7 @@ use App\Http\Controllers\RegistrasiController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\JadwalMUController;
 use App\Http\Controllers\LandingController;
+use App\Http\Controllers\PendonorController;
 use App\Http\Controllers\StokDarahController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
@@ -42,3 +43,4 @@ Route::resource('/dashboard/alamatudd', AlamatUDDController::class)->middleware(
 Route::resource('/dashboard/stokdarah', StokDarahController::class)->middleware('auth');
 Route::resource('/dashboard/jadwalmu', JadwalMUController::class)->middleware('auth');
 Route::resource('/dashboard/users', UsersController::class)->middleware('admin');
+Route::resource('/dashboard/datapendonor', PendonorController::class)->middleware('auth');
