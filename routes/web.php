@@ -43,4 +43,4 @@ Route::resource('/dashboard/alamatudd', AlamatUDDController::class)->middleware(
 Route::resource('/dashboard/stokdarah', StokDarahController::class)->middleware('auth');
 Route::resource('/dashboard/jadwalmu', JadwalMUController::class)->middleware('auth');
 Route::resource('/dashboard/users', UsersController::class)->middleware('admin');
-Route::resource('/dashboard/datapendonor', PendonorController::class)->middleware('auth');
+Route::resource('/dashboard/pendonor', PendonorController::class)->middleware('auth');
