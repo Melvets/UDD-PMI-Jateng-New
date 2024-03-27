@@ -14,11 +14,11 @@ class Pendonor extends Model
 
     public function AlamatUDD()
     {
-        return $this->belongsToMany(AlamatUDD::class, 'alamatudd_id', 'id');
+        return $this->belongsTo(AlamatUDD::class, 'alamatudd_id', 'id');
     }
 
     public function User()
     {
-        return $this->belongsToMany(User::class, 'user_id', 'id');
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
 }

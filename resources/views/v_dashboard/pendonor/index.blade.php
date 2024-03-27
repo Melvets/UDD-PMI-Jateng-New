@@ -84,14 +84,14 @@
                                 <thead>
                                     <tr>
                                         <th class="w-1">No.</th>
-                                        <th width="100px">UDD Kabkot</th>
-                                        <th>Tempat</th>
-                                        <th width="250px">Alamat</th>
-                                        <th>Kabupaten/Kota</th>
-                                        <th>Jam Mulai</th>
-                                        <th>Jam Selesai</th>
-                                        <th width="100px">Tanggal</th>
-                                        <th>Peruntukan</th>
+                                        <th>UDD Kabkot</th>
+                                        <th>User Input</th>
+                                        <th>No Piagam</th>
+                                        <th>Nama</th>
+                                        <th>Tempat Lahir</th>
+                                        <th>Jenis Kelamin</th>
+                                        <th>Jumlah Donasi</th>
+                                        <th>Piagam Ke- </th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -101,22 +101,25 @@
                                         <tr>
                                             <td><span class="text-secondary">{{ $loop->iteration }}</span></td>
                                             <td>{{ $data->AlamatUDD->udd_kabkot }}</td>
-                                            <td>{{ $data->tempat }}</td>
-                                            <td>{{ $data->alamat }}</td>
-                                            <td>{{ $data->kabkot }}</td>
-                                            <td>{{ \Carbon\Carbon::parse($data->jam_mulai)->format('H:i') }}</td>
-                                            <td>{{ \Carbon\Carbon::parse($data->jam_selesai)->format('H:i') }}</td>
-                                            <td>{{ \Carbon\Carbon::parse($data->tanggal)->format('d-m-Y') }}</td>
-                                            <td>{{ $data->peruntukan }}</td>
+                                            <td>{{ $data->User->first_name }} {{ $data->User->last_name }}</td>
+                                            <td>{{ $data->no_piagam }}</td>
+                                            <td>{{ $data->nama }}</td>
+                                            <td>{{ $data->tempat_lahir }}</td>
+                                            <td>{{ $data->jk }}</td>
+                                            <td>{{ $data->jumlah_donasi }}</td>
+                                            <td>{{ $data->piagam_ke }}</td>
                                             <td>
                                                 <div class="d-inline-flex">
-                                                    <a href="/dashboard/jadwalmu/{{ $data->id }}/edit"
+                                                    <a href="{{ route('pendonor.edit', $data->id) }}"
                                                         class="btn btn-default text-green btn-md shadow rounded-2 p-2"
                                                         title="update"><i class="fas fa-pen"></i></a>
-                                                    <form action="/dashboard/jadwalmu/{{ $data->id }}" method="POST">
+                                                    <a href="{{ route('pendonor.show', $data->id) }}"
+                                                        class="btn btn-default text-warning btn-md shadow rounded-2 p-2"
+                                                        title="view"><i class="fas fa-eye"></i></a>
+                                                    <form action="{{ route('pendonor.destroy', $data->id) }}" method="POST">
 
-                                                        @method('delete')
                                                         @csrf
+                                                        @method('delete')
 
                                                         <button class="btn btn-default text-red btn-md shadow rounded-2 p-2"
                                                             onclick="return confirm('Apakah Anda yakin?')"> <i
@@ -134,7 +137,7 @@
                         <div class="card-footer d-flex align-items-center" style="justify-content: space-between">
                             <p class="m-0 text-secondary">Showing <span>1</span> to <span>8</span> of <span>16</span>
                                 entries</p>
-                            {{ $dataJadwalMU->links() }}
+                            {{ $dataPendonor->links() }}
                         </div>
 
                     </div>
