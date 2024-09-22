@@ -10,7 +10,7 @@
                 <div class="col">
                     <!-- Page pre-title -->
                     <div class="page-pretitle">
-                        <a href="/dashboard" class="text-secondary">/dashboard</a><a href="/dashboard/jadwalmu" class="text-secondary">/jadwalmu</a>/create
+                        <a href="/dashboard" class="text-secondary">/dashboard</a><a href="/dashboard/pendonor" class="text-secondary">/pendonor</a>/create
                     </div>
                     <h2 class="page-title">
                         Create New Data
@@ -42,13 +42,33 @@
                                     <div class="row row-cards">
 
                                         @can('admin')
-                                            <div class="col-md-12">
+                                            <div class="col-md-6">
+                                                <div class="mb-1">
+                                                    <label for="user_id" class="form-label">Username</label>
+                                                    <select class="form-select" id="user_id" name="user_id">
+                                                        <option selected value="{{ auth()->user()->id }}">{{ auth()->user()->first_name }} {{ auth()->user()->last_name }}</option>
+                                                        @foreach ($dataUsers as $data)
+                                                            @if (auth()->user()->AlamatUDD->udd_kabkot != $data->udd_kabkot)
+                                                                <option value="{{ $data->id }}">{{ $data->udd_kabkot }}</option>
+                                                            @endif
+                                                        @endforeach
+                                                    </select>
+                                                    @error('user_id')
+                                                        <div class="invalid-feedback">
+                                                            {{ $message }}
+                                                        </div>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
                                                 <div class="mb-1">
                                                     <label for="alamat_id" class="form-label">UDD Kabupaten/Kota</label>
                                                     <select class="form-select kabkot" id="alamat_id" name="alamat_id">
-                                                        <option selected>--Pilih UDD Kabupaten/Kota--</option>
+                                                        <option selected value="{{ auth()->user()->AlamatUDD->udd_kabkot }}">{{ auth()->user()->AlamatUDD->udd_kabkot }}</option>
                                                         @foreach ($dataAlamatUDD as $data)
-                                                            <option value="{{ $data->id }}">{{ $data->udd_kabkot }}</option>
+                                                            @if (auth()->user()->AlamatUDD->udd_kabkot != $data->udd_kabkot)
+                                                                <option value="{{ $data->id }}">{{ $data->udd_kabkot }}</option>
+                                                            @endif
                                                         @endforeach
                                                     </select>
                                                     @error('alamat_id')

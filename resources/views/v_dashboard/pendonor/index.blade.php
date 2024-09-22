@@ -20,7 +20,7 @@
                 <!-- Page title actions -->
                 <div class="col-auto ms-auto d-print-none">
                     <div class="btn-list">
-                        <a href="/dashboard/jadwalmu/create" class="btn d-none d-sm-inline-block text-white"
+                        <a href="/dashboard/pendonor/create" class="btn d-none d-sm-inline-block text-white"
                             style="background-color: #e60000">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
                                 viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AlamatUDD;
 use App\Models\Pendonor;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class PendonorController extends Controller
@@ -24,7 +26,10 @@ class PendonorController extends Controller
 
     public function create()
     {
-        //
+        return view('v_dashboard.pendonor.create', [
+            'dataUsers' => User::all(),
+            'dataAlamatUDD' => AlamatUDD::all(),
+        ]);
     }
 
     public function store(Request $request)
