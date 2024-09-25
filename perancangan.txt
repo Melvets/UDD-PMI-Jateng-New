@@ -34,6 +34,27 @@ DATABASE
 	date	: created_at	 
 	date	: updated_at
 
+4. Pendonor
+	bigint	: id 		(key)
+	bigint	: alamatudd_id 1	(foreign)*	
+	bigint	: user_id 1    	(foreign)*	
+	bigint	: no_ktp 1		(not null)
+	varchar	: no_piagam 1	(not null)
+	varchar	: nama 1		(not null)
+	date	: tanggal_lahir 1	(not null)
+	varchar	: tempat_lahir 1	(not null)
+	varchar	: alamat 1		(not null)
+	enum	: jk 1		(not null)
+	varchar	: agama 1		(not null)
+	varchar	: no_telepon 1	(not null)
+	varchar	: pekerjaan	(not null)
+	varchar	: golda		(not null)
+	int	: jumlah_donasi	(not null)
+	date	: donor_pertama	(not null)
+	int	: piagam_ke	(not null)
+	date	: tanggal_piagam	(not null)
+	boolean	: status		(not null)
+
 =======================================================
 
 FRONTEND
