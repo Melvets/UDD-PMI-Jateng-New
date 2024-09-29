@@ -47,13 +47,13 @@ DATABASE
 	enum	: jk 1		(not null)
 	varchar	: agama 1		(not null)
 	varchar	: no_telepon 1	(not null)
-	varchar	: pekerjaan	(not null)
-	varchar	: golda		(not null)
-	int	: jumlah_donasi	(not null)
-	date	: donor_pertama	(not null)
-	int	: piagam_ke	(not null)
-	date	: tanggal_piagam	(not null)
-	boolean	: status		(not null)
+	varchar	: pekerjaan 1 (not null)
+	varchar	: golda 1		(not null)
+	int	: jumlah_donasi 1	(not null)
+	date	: donor_pertama 1	(not null)
+	int	: piagam_ke	1 (not null)
+	date	: tanggal_piagam 1	(not null)
+	boolean	: status 1		(not null)
 
 =======================================================
 

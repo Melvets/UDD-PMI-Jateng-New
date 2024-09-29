@@ -237,6 +237,114 @@
                                         </div>
                                     </div>
 
+                                    {{-- Pekerjaann --}}
+                                    <div class="mb-3 row">
+                                        <label for="pekerjaan" class="col-3 col-form-label required">Pekerjaan</label>
+                                        <div class="col">
+                                            <input type="text" name="pekerjaan" id="pekerjaan"
+                                                class="form-control @error('pekerjaan') is-invalid @enderror"
+                                                placeholder="Wajib diisi ..." required value="{{ old('pekerjaan') }}">
+                                            @error('pekerjaan')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                    </div>
+
+                                    {{-- Golda --}}
+                                    <div class="mb-3 row">
+                                        <label for="golda" class="col-3 col-form-label required">Golongan Darah</label>
+                                        <div class="col">
+                                            <input type="text" name="golda" id="golda"
+                                                class="form-control @error('golda') is-invalid @enderror"
+                                                placeholder="Wajib diisi ..." required value="{{ old('golda') }}">
+                                            @error('golda')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                    </div>
+
+                                    {{-- Jumlah Donasi --}}
+                                    <div class="mb-3 row">
+                                        <label for="jumlah_donasi" class="col-3 col-form-label required">Jumlah Donasi</label>
+                                        <div class="col">
+                                            <input type="number" name="jumlah_donasi" id="jumlah_donasi"
+                                                class="form-control @error('jumlah_donasi') is-invalid @enderror"
+                                                placeholder="Wajib diisi ..." required value="{{ old('jumlah_donasi') }}">
+                                            @error('jumlah_donasi')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                    </div>
+
+                                    {{-- Donor Pertama --}}
+                                    <div class="mb-3 row">
+                                        <label for="donor_pertama" class="col-3 col-form-label required">Donor Pertama</label>
+                                        <div class="col">
+                                            <input type="date" name="donor_pertama" id="donor_pertama"
+                                                class="form-control @error('donor_pertama') is-invalid @enderror" required
+                                                value="{{ old('donor_pertama') }}">
+                                            @error('donor_pertama')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                    </div>       
+                                    
+                                    {{-- Piagam Ke- --}}
+                                    <div class="mb-3 row">
+                                        <label for="piagam_ke" class="col-3 col-form-label required">Piagam Ke-</label>
+                                        <div class="col">
+                                            <input type="number" name="piagam_ke" id="piagam_ke"
+                                                class="form-control @error('piagam_ke') is-invalid @enderror"
+                                                placeholder="Wajib diisi ..." required value="{{ old('piagam_ke') }}">
+                                            @error('piagam_ke')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                    </div>       
+                                    
+                                    {{-- Tanggal Piagam --}}
+                                    <div class="mb-3 row">
+                                        <label for="tanggal_piagam" class="col-3 col-form-label required">Tanggal Piagam</label>
+                                        <div class="col">
+                                            <input type="date" name="tanggal_piagam" id="tanggal_piagam"
+                                                class="form-control @error('tanggal_piagam') is-invalid @enderror" required
+                                                value="{{ old('tanggal_piagam') }}">
+                                            @error('tanggal_piagam')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    
+                                    {{-- Status --}}
+                                    <div class="mb-3 row">
+                                        <label for="status" class="col-3 col-form-label required">Status</label>
+                                        <div class="col">
+                                            <label class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="status" checked
+                                                    value="0">
+                                                <span class="form-check-label">Aktif</span>
+                                            </label>
+
+                                            <label class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="status"
+                                                    value="1">
+                                                <span class="form-check-label">Tidak Aktif</span>
+                                            </label>
+                                        </div>
+                                    </div>                                    
+
                                 </div>
 
                                 <div class="card-footer text-end">
