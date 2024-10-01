@@ -34,7 +34,34 @@ class PendonorController extends Controller
 
     public function store(Request $request)
     {
-        //
+        // dd($request->all());
+
+        $validateData = $request->validate([
+            'no_piagam' => 'required',
+            'nama' => 'required',
+            'alamat' => 'required',
+            'tempat_lahir' => 'required',
+            'tanggal_lahir' => 'required',
+            'agama' => 'required',
+            'jk' => 'required',
+            'no_ktp' => 'required',
+            'no_telepon' => 'required',
+            'pekerjaan' => 'required',
+            'golda' => 'required',
+            'jumlah_donasi' => 'required',
+            'donor_pertama' => 'required',
+            'piagam_ke' => 'required',
+            'tanggal_piagam' => 'required',
+        ]);
+
+        // dd(auth()->user()->id);
+
+        $validateData['user_id'] = auth()->user()->id;
+        $validateData['alamatudd_id'] = auth()->user()->alamatudd_id;
+
+        Pendonor::create($validateData);
+
+        return redirect('/dashboard/pendonor')->with('success', 'Data berhasil dibuat!');
     }
 
     public function show(Pendonor $pendonor)

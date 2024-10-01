@@ -32,7 +32,6 @@ return new class extends Migration
             $table->date('donor_pertama');
             $table->integer('piagam_ke');
             $table->date('tanggal_piagam');
-            $table->boolean('status');
             $table->timestamps();
         });
     }

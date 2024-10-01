@@ -33,7 +33,6 @@ class PendonorSeeder extends Seeder
             'donor_pertama'     =>  date('2015-11-11'),
             'piagam_ke'         =>  50,
             'tanggal_piagam'    =>  date('2023-02-05'),
-            'status'            =>  0
         ]);
 
         Pendonor::create([
@@ -54,7 +53,6 @@ class PendonorSeeder extends Seeder
             'donor_pertama'     =>  date('2015-11-11'),
             'piagam_ke'         =>  50,
             'tanggal_piagam'    =>  date('2021-05-05'),
-            'status'            =>  0
         ]);
 
         Pendonor::create([
@@ -75,7 +73,6 @@ class PendonorSeeder extends Seeder
             'donor_pertama'     =>  date('2015-11-11'),
             'piagam_ke'         =>  50,
             'tanggal_piagam'    =>  date('2021-12-05'),
-            'status'            =>  0
         ]);
     }
 }

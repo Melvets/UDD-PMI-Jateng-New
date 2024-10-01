@@ -41,8 +41,10 @@ class JadwalMUController extends Controller
 
     public function store(Request $request)
     {
+
+        // dd($request->all());
+
         $validateData = $request->validate([
-            'alamatudd_id' => 'required',
             'tempat' => 'required',
             'alamat'  => 'required',
             'kabkot' => 'required',
@@ -52,7 +54,7 @@ class JadwalMUController extends Controller
             'peruntukan' => 'required'
         ]);
 
-        // $validateData['alamatudd_id'] = auth()->user()->alamatudd_id;
+        $validateData['alamatudd_id'] = auth()->user()->alamatudd_id;
 
         JadwalMU::create($validateData);
 

@@ -30,7 +30,7 @@
                     <div class="row row-cards">
                         <div class="col-12">
 
-                            <form action="/dashboard/pendini" method="POST" class="card">
+                            <form action="/dashboard/pendonor" method="POST" class="card">
 
                                 @csrf
 
@@ -43,7 +43,7 @@
                                     {{-- User Deskription Start --}}
 
                                     <div class="mb-3 row">
-                                        <label for="user_id" class="col-3 col-form-label required">Username</label>
+                                        <label for="user_id" class="col-3 col-form-label">Username</label>
                                         <div class="col">
                                             <input disabled type="text" name="user_id" id="user_id"
                                                 class="form-control" placeholder="Wajib diisi ..."
@@ -52,10 +52,10 @@
                                     </div>
 
                                     <div class="mb-3 row">
-                                        <label for="alamat_id" class="col-3 col-form-label required">UDD
+                                        <label for="alamatudd_id" class="col-3 col-form-label">UDD
                                             Kabupaten/Kota</label>
                                         <div class="col">
-                                            <input disabled type="text" name="alamat_id" id="alamat_id"
+                                            <input disabled type="text" name="alamatudd_id" id="alamatudd_id"
                                                 class="form-control" placeholder="Wajib diisi ..."
                                                 value="{{ auth()->user()->AlamatUDD->udd_kabkot }}">
                                         </div>
@@ -112,7 +112,7 @@
                                     <div class="mb-3 row">
                                         <label for="tempat_lahir" class="col-3 col-form-label required">Tempat Lahir</label>
                                         <div class="col">
-                                            <select class="form-select tempat_lahir" id="tempat_lahir" name="tempat_lahir">
+                                            <select class="form-select" id="tempat_lahir" name="tempat_lahir">
                                                 <option selected>--Pilih Kabupaten/Kota--</option>
                                                 <option value="Kabupaten Banjarnegara">Kabupaten Banjarnegara</option>
                                                 <option value="Kabupaten Banyumas ">Kabupaten Banyumas </option>
@@ -325,25 +325,7 @@
                                                 </div>
                                             @enderror
                                         </div>
-                                    </div>
-                                    
-                                    {{-- Status --}}
-                                    <div class="mb-3 row">
-                                        <label for="status" class="col-3 col-form-label required">Status</label>
-                                        <div class="col">
-                                            <label class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="status" checked
-                                                    value="0">
-                                                <span class="form-check-label">Aktif</span>
-                                            </label>
-
-                                            <label class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="status"
-                                                    value="1">
-                                                <span class="form-check-label">Tidak Aktif</span>
-                                            </label>
-                                        </div>
-                                    </div>                                    
+                                    </div>                                  
 
                                 </div>
 
