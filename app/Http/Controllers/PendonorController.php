@@ -69,9 +69,13 @@ class PendonorController extends Controller
         //
     }
 
-    public function edit(Pendonor $pendonor)
+    public function edit($id)
     {
-        //
+        $pendonor = Pendonor::find($id);
+
+        return view('v_dashboard.pendonor.edit', [
+            'dataPendonor' => $pendonor
+        ]);
     }
 
     public function update(Request $request, Pendonor $pendonor)

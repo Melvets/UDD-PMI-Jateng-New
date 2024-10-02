@@ -89,3 +89,21 @@ User:
 1. Auth
 2. Admin
 
+<select name="penerbit_id" id="penerbit_id" class="form-control @error('penerbit_id') is-invalid @enderror" autofocus>
+	<option value="">--Pilih Nama Penerbit--</option>
+	@foreach ($dataPenerbit as $data)
+		@if (old('penerbit_id', $dataBuku->id) == $data->id)
+			<option value="{{ $data->id }}" selected>{{ $data->nama_penerbit }}</option>
+		@endif
+			<option value="{{ $data->id }}">{{ $data->nama_penerbit }}</option>
+	@endforeach
+</select>
+@error('penerbit_id')
+	<div class="text-danger">
+		{{ $message }}
+	</div>
+@enderror
+
+catatan
+create edit jadwal mu revisi kabkot 
+pendonor edit sampai jk

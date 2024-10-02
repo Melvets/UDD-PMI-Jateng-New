@@ -37,7 +37,7 @@
                                 @method('put')
 
                                 <div class="card-header">
-                                    <h3 class="card-title">Form Create Data</h3>
+                                    <h3 class="card-title">Form Edit Data</h3>
                                 </div>
 
                                 <div class="card-body">

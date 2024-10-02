@@ -10,10 +10,10 @@
                     <!-- Page pre-title -->
                     <div class="page-pretitle">
                         <a href="/dashboard" class="text-secondary">/dashboard</a><a href="/dashboard/pendonor"
-                            class="text-secondary">/pendonor</a>/create
+                            class="text-secondary">/pendonor</a>/edit
                     </div>
                     <h2 class="page-title">
-                        Create New Data
+                        Edit Pendonor
                     </h2>
                 </div>
 
@@ -30,12 +30,13 @@
                     <div class="row row-cards">
                         <div class="col-12">
 
-                            <form action="/dashboard/pendonor" method="POST" class="card">
+                            <form action="/dashboard/pendonor/{{ $dataPendonor->id }}" method="POST" class="card">
 
                                 @csrf
+                                @method('put')
 
                                 <div class="card-header">
-                                    <h3 class="card-title">Form Create Data</h3>
+                                    <h3 class="card-title">Form Edit Data</h3>
                                 </div>
 
                                 <div class="card-body">
@@ -47,7 +48,7 @@
                                         <div class="col">
                                             <input disabled type="text" name="user_id" id="user_id"
                                                 class="form-control" placeholder="Wajib diisi ..."
-                                                value="{{ auth()->user()->first_name }} {{ auth()->user()->last_name }}">
+                                                value="{{ $dataPendonor->User->first_name }} {{ $dataPendonor->User->last_name }}">
                                         </div>
                                     </div>
 
@@ -57,7 +58,7 @@
                                         <div class="col">
                                             <input disabled type="text" name="alamatudd_id" id="alamatudd_id"
                                                 class="form-control" placeholder="Wajib diisi ..."
-                                                value="{{ auth()->user()->AlamatUDD->udd_kabkot }}">
+                                                value="{{ $dataPendonor->AlamatUDD->udd_kabkot }}">
                                         </div>
                                     </div>
 
@@ -69,7 +70,7 @@
                                         <div class="col">
                                             <input type="text" name="no_piagam" id="no_piagam"
                                                 class="form-control @error('no_piagam') is-invalid @enderror"
-                                                placeholder="Wajib diisi ..." required value="{{ old('no_piagam') }}">
+                                                placeholder="Wajib diisi ..." required value="{{ old('no_piagam', $dataPendonor->no_piagam) }}">
                                             @error('no_piagam')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
@@ -84,7 +85,7 @@
                                         <div class="col">
                                             <input type="text" name="nama" id="nama"
                                                 class="form-control @error('nama') is-invalid @enderror"
-                                                placeholder="Wajib diisi ..." required value="{{ old('nama') }}">
+                                                placeholder="Wajib diisi ..." required value="{{ old('nama', $dataPendonor->nama) }}">
                                             @error('nama')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
@@ -99,7 +100,7 @@
                                         <div class="col">
                                             <input type="text" name="alamat" id="alamat"
                                                 class="form-control @error('alamat') is-invalid @enderror"
-                                                placeholder="Wajib diisi ..." required value="{{ old('alamat') }}">
+                                                placeholder="Wajib diisi ..." required value="{{ old('alamat', $dataPendonor->alamat) }}">
                                             @error('alamat')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
@@ -112,43 +113,46 @@
                                     <div class="mb-3 row">
                                         <label for="tempat_lahir" class="col-3 col-form-label required">Tempat Lahir</label>
                                         <div class="col">
-                                            <select class="form-select" id="tempat_lahir" name="tempat_lahir">
-                                                <option selected value="">--Pilih Kabupaten/Kota--</option>
-                                                <option value="Kabupaten Banjarnegara">Kabupaten Banjarnegara</option>
-                                                <option value="Kabupaten Banyumas ">Kabupaten Banyumas </option>
-                                                <option value="Kabupaten Batang">Kabupaten Batang</option>
-                                                <option value="Kabupaten Blora">Kabupaten Blora</option>
-                                                <option value="Kabupaten Boyolali">Kabupaten Boyolali</option>
-                                                <option value="Kabupaten Brebes">Kabupaten Brebes</option>
-                                                <option value="Kabupaten Cilacap">Kabupaten Cilacap</option>
-                                                <option value="Kabupaten Demak">Kabupaten Demak</option>
-                                                <option value="Kabupaten Grobogan">Kabupaten Grobogan</option>
-                                                <option value="Kabupaten Jepara">Kabupaten Jepara</option>
-                                                <option value="Kabupaten Karanganyar">Kabupaten Karanganyar</option>
-                                                <option value="Kabupaten Kebumen">Kabupaten Kebumen</option>
-                                                <option value="Kabupaten Kendal">Kabupaten Kendal</option>
-                                                <option value="Kabupaten Klaten">Kabupaten Klaten</option>
-                                                <option value="Kabupaten Kudus">Kabupaten Kudus</option>
-                                                <option value="Kabupaten Magelang">Kabupaten Magelang</option>
-                                                <option value="Kabupaten Pati">Kabupaten Pati</option>
-                                                <option value="Kabupaten Pekalongan">Kabupaten Pekalongan</option>
-                                                <option value="Kabupaten Pemalang">Kabupaten Pemalang</option>
-                                                <option value="Kabupaten Purbalingga">Kabupaten Purbalingga</option>
-                                                <option value="Kabupaten Purworejo">Kabupaten Purworejo</option>
-                                                <option value="Kabupaten Rembang">Kabupaten Rembang</option>
-                                                <option value="Kabupaten Semarang">Kabupaten Semarang</option>
-                                                <option value="Kabupaten Sragen">Kabupaten Sragen</option>
-                                                <option value="Kabupaten Sukoharjo">Kabupaten Sukoharjo</option>
-                                                <option value="Kabupaten Tegal">Kabupaten Tegal</option>
-                                                <option value="Kabupaten Temanggung">Kabupaten Temanggung</option>
-                                                <option value="Kabupaten Wonogiri">Kabupaten Wonogiri</option>
-                                                <option value="Kabupaten Wonosobo">Kabupaten Wonosobo</option>
-                                                <option value="Kota Magelang">Kota Magelang</option>
-                                                <option value="Kota Pekalongan">Kota Pekalongan</option>
-                                                <option value="Kota Salatiga">Kota Salatiga</option>
-                                                <option value="Kota Semarang">Kota Semarang</option>
-                                                <option value="Kota Surakarta">Kota Surakarta</option>
-                                                <option value="Kota Tegal">Kota Tegal</option>
+                                            <select class="form-select @error('tempat_lahir') is-invalid @enderror" id="tempat_lahir" name="tempat_lahir">
+                                                <option value="">--Pilih Kabupaten/Kota--</option>
+                                                @if (old('tempat_lahir', $dataPendonor->tempat_lahir))
+                                                    <option selected value="{{ $dataPendonor->tempat_lahir }}">{{ $dataPendonor->tempat_lahir }}</option>
+                                                @endif
+                                                    <option value="Kabupaten Banjarnegara">Kabupaten Banjarnegara</option>
+                                                    <option value="Kabupaten Banyumas ">Kabupaten Banyumas </option>
+                                                    <option value="Kabupaten Batang">Kabupaten Batang</option>
+                                                    <option value="Kabupaten Blora">Kabupaten Blora</option>
+                                                    <option value="Kabupaten Boyolali">Kabupaten Boyolali</option>
+                                                    <option value="Kabupaten Brebes">Kabupaten Brebes</option>
+                                                    <option value="Kabupaten Cilacap">Kabupaten Cilacap</option>
+                                                    <option value="Kabupaten Demak">Kabupaten Demak</option>
+                                                    <option value="Kabupaten Grobogan">Kabupaten Grobogan</option>
+                                                    <option value="Kabupaten Jepara">Kabupaten Jepara</option>
+                                                    <option value="Kabupaten Karanganyar">Kabupaten Karanganyar</option>
+                                                    <option value="Kabupaten Kebumen">Kabupaten Kebumen</option>
+                                                    <option value="Kabupaten Kendal">Kabupaten Kendal</option>
+                                                    <option value="Kabupaten Klaten">Kabupaten Klaten</option>
+                                                    <option value="Kabupaten Kudus">Kabupaten Kudus</option>
+                                                    <option value="Kabupaten Magelang">Kabupaten Magelang</option>
+                                                    <option value="Kabupaten Pati">Kabupaten Pati</option>
+                                                    <option value="Kabupaten Pekalongan">Kabupaten Pekalongan</option>
+                                                    <option value="Kabupaten Pemalang">Kabupaten Pemalang</option>
+                                                    <option value="Kabupaten Purbalingga">Kabupaten Purbalingga</option>
+                                                    <option value="Kabupaten Purworejo">Kabupaten Purworejo</option>
+                                                    <option value="Kabupaten Rembang">Kabupaten Rembang</option>
+                                                    <option value="Kabupaten Semarang">Kabupaten Semarang</option>
+                                                    <option value="Kabupaten Sragen">Kabupaten Sragen</option>
+                                                    <option value="Kabupaten Sukoharjo">Kabupaten Sukoharjo</option>
+                                                    <option value="Kabupaten Tegal">Kabupaten Tegal</option>
+                                                    <option value="Kabupaten Temanggung">Kabupaten Temanggung</option>
+                                                    <option value="Kabupaten Wonogiri">Kabupaten Wonogiri</option>
+                                                    <option value="Kabupaten Wonosobo">Kabupaten Wonosobo</option>
+                                                    <option value="Kota Magelang">Kota Magelang</option>
+                                                    <option value="Kota Pekalongan">Kota Pekalongan</option>
+                                                    <option value="Kota Salatiga">Kota Salatiga</option>
+                                                    <option value="Kota Semarang">Kota Semarang</option>
+                                                    <option value="Kota Surakarta">Kota Surakarta</option>
+                                                    <option value="Kota Tegal">Kota Tegal</option>
                                             </select>
                                             @error('tempat_lahir')
                                                 <div class="invalid-feedback">
@@ -160,12 +164,11 @@
 
                                     {{-- Tanggal Lahir --}}
                                     <div class="mb-3 row">
-                                        <label for="tanggal_lahir" class="col-3 col-form-label required">Tanggal
-                                            Lahir</label>
+                                        <label for="tanggal_lahir" class="col-3 col-form-label required">Tanggal Lahir</label>
                                         <div class="col">
                                             <input type="date" name="tanggal_lahir" id="tanggal_lahir"
                                                 class="form-control @error('tanggal_lahir') is-invalid @enderror" required
-                                                value="{{ old('tanggal_lahir') }}">
+                                                value="{{ old('tanggal_lahir', $dataPendonor->tanggal_lahir) }}">
                                             @error('tanggal_lahir')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
@@ -180,7 +183,7 @@
                                         <div class="col">
                                             <input type="text" name="agama" id="agama"
                                                 class="form-control @error('agama') is-invalid @enderror"
-                                                placeholder="Wajib diisi ..." required value="{{ old('agama') }}">
+                                                placeholder="Wajib diisi ..." required value="{{ old('agama', $dataPendonor->agama) }}">
                                             @error('agama')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
@@ -194,14 +197,14 @@
                                         <label for="jk" class="col-3 col-form-label required">Jenis Kelamin</label>
                                         <div class="col">
                                             <label class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="jk" checked
+                                                <input class="form-check-input" type="radio" name="jk" @if ($dataPendonor->jk == "Laki-Laki") checked @endif 
                                                     value="Laki-Laki">
                                                 <span class="form-check-label">Laki-Laki</span>
                                             </label>
 
                                             <label class="form-check form-check-inline">
                                                 <input class="form-check-input" type="radio" name="jk"
-                                                    value="Perempuan">
+                                                    value="Perempuan" @if ($dataPendonor->jk == "Perempuan") checked @endif >
                                                 <span class="form-check-label">Perempuan</span>
                                             </label>
                                         </div>
