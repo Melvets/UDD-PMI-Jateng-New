@@ -39,7 +39,7 @@
                                     <h3 class="card-title">Form Edit Data</h3>
                                 </div>
 
-                                <div class="card-body">
+                                <div class="card-body px-5">
 
                                     {{-- User Deskription Start --}}
 
