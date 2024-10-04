@@ -106,4 +106,4 @@ User:
 
 catatan
 create edit jadwal mu revisi kabkot 
-pendonor edit sampai jk
+database pendonor validate dibenerin

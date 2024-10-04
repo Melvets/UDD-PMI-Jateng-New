@@ -256,9 +256,17 @@
                                     <div class="mb-3 row">
                                         <label for="golda" class="col-3 col-form-label required">Golongan Darah</label>
                                         <div class="col">
-                                            <input type="text" name="golda" id="golda"
-                                                class="form-control @error('golda') is-invalid @enderror"
-                                                placeholder="Wajib diisi ..." required value="{{ old('golda') }}">
+                                            <select class="form-select" id="golda" name="golda">
+                                                <option selected value="">--Pilih Golongan Darah--</option>
+                                                <option value="A+">A+</option>
+                                                <option value="B+">B+</option>
+                                                <option value="O+">O+</option>
+                                                <option value="AB+">AB+</option>
+                                                <option value="A-">A-</option>
+                                                <option value="B-">B-</option>
+                                                <option value="O-">O-</option>
+                                                <option value="AB-">AB-</option>
+                                            </select>
                                             @error('golda')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}

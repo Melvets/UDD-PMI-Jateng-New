@@ -216,7 +216,7 @@
                                         <div class="col">
                                             <input type="text" name="no_ktp" id="no_ktp"
                                                 class="form-control @error('no_ktp') is-invalid @enderror"
-                                                placeholder="Wajib diisi ..." required value="{{ old('no_ktp') }}">
+                                                placeholder="Wajib diisi ..." required value="{{ old('no_ktp', $dataPendonor->no_ktp) }}">
                                             @error('no_ktp')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
@@ -231,7 +231,7 @@
                                         <div class="col">
                                             <input type="text" name="no_telepon" id="no_telepon"
                                                 class="form-control @error('no_telepon') is-invalid @enderror"
-                                                placeholder="Wajib diisi ..." required value="{{ old('no_telepon') }}">
+                                                placeholder="Wajib diisi ..." required value="{{ old('no_telepon', $dataPendonor->no_telepon) }}">
                                             @error('no_telepon')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
@@ -246,7 +246,7 @@
                                         <div class="col">
                                             <input type="text" name="pekerjaan" id="pekerjaan"
                                                 class="form-control @error('pekerjaan') is-invalid @enderror"
-                                                placeholder="Wajib diisi ..." required value="{{ old('pekerjaan') }}">
+                                                placeholder="Wajib diisi ..." required value="{{ old('pekerjaan', $dataPendonor->pekerjaan) }}">
                                             @error('pekerjaan')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
@@ -259,9 +259,20 @@
                                     <div class="mb-3 row">
                                         <label for="golda" class="col-3 col-form-label required">Golongan Darah</label>
                                         <div class="col">
-                                            <input type="text" name="golda" id="golda"
-                                                class="form-control @error('golda') is-invalid @enderror"
-                                                placeholder="Wajib diisi ..." required value="{{ old('golda') }}">
+                                            <select class="form-select @error('golda') is-invalid @enderror" id="golda" name="golda">
+                                                <option value="">--Pilih Golongan Darah--</option>
+                                                @if (old('golda', $dataPendonor->golda))
+                                                    <option selected value="{{ $dataPendonor->golda }}">{{ $dataPendonor->golda }}</option>
+                                                @endif
+                                                    <option value="A+">A+</option>
+                                                    <option value="B+">B+</option>
+                                                    <option value="O+">O+</option>
+                                                    <option value="AB+">AB+</option>
+                                                    <option value="A-">A-</option>
+                                                    <option value="B-">B-</option>
+                                                    <option value="O-">O-</option>
+                                                    <option value="AB-">AB-</option>
+                                            </select>
                                             @error('golda')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
@@ -276,7 +287,7 @@
                                         <div class="col">
                                             <input type="number" name="jumlah_donasi" id="jumlah_donasi"
                                                 class="form-control @error('jumlah_donasi') is-invalid @enderror"
-                                                placeholder="Wajib diisi ..." required value="{{ old('jumlah_donasi') }}">
+                                                placeholder="Wajib diisi ..." required value="{{ old('jumlah_donasi', $dataPendonor->jumlah_donasi) }}">
                                             @error('jumlah_donasi')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
@@ -291,7 +302,7 @@
                                         <div class="col">
                                             <input type="date" name="donor_pertama" id="donor_pertama"
                                                 class="form-control @error('donor_pertama') is-invalid @enderror" required
-                                                value="{{ old('donor_pertama') }}">
+                                                value="{{ old('donor_pertama', $dataPendonor->donor_pertama) }}">
                                             @error('donor_pertama')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
@@ -306,7 +317,7 @@
                                         <div class="col">
                                             <input type="number" name="piagam_ke" id="piagam_ke"
                                                 class="form-control @error('piagam_ke') is-invalid @enderror"
-                                                placeholder="Wajib diisi ..." required value="{{ old('piagam_ke') }}">
+                                                placeholder="Wajib diisi ..." required value="{{ old('piagam_ke', $dataPendonor->piagam_ke) }}">
                                             @error('piagam_ke')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
@@ -321,7 +332,7 @@
                                         <div class="col">
                                             <input type="date" name="tanggal_piagam" id="tanggal_piagam"
                                                 class="form-control @error('tanggal_piagam') is-invalid @enderror" required
-                                                value="{{ old('tanggal_piagam') }}">
+                                                value="{{ old('tanggal_piagam', $dataPendonor->tanggal_piagam) }}">
                                             @error('tanggal_piagam')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
