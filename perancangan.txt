@@ -108,6 +108,14 @@ catatan
 create edit jadwal mu revisi kabkot 
 stokdarah user create edit error
 
-database pendonor validate dibenerin
-pendonor show pecah-pecahin
+database pendonor validate dibenerin ()
+	- agama () dropdown
+	- pekerjaan () dropdown
 pendonor show design
+
++ tabel baruuuuuuuuuuuu = pekerjaan
+	- button di create dan edit pendonor
+	- Modal / view baru
+	- Create pekerjaan
+	- Edit pekerjaan
+	- Hapus pekerjaan

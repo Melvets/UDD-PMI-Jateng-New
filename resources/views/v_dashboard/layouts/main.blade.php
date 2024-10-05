@@ -306,6 +306,8 @@
     <!-- Tabler Core -->
     <script src="/template/dist/js/tabler.min.js?1685973381" defer></script>
     <script src="/template/dist/js/demo.min.js?1685973381" defer></script>
+    {{-- My Script --}}
+    <script src="/js/script.js"></script>
 
   </body>
 </html>

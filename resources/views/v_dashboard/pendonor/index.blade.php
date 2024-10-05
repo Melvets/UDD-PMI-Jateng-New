@@ -147,36 +147,6 @@
         </div>
     </div>
 
-    <div class="modal fade" id="modal-detail" tabindex="-1" aria-labelledby="modal-detail" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="">Modal title</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p id="nama"></p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(document).on('click','.modal-detail',function(){
-            var url = "/dashboard/pendonor";
-            var pendonor_id = $(this).data('id');
-            $.get(url + '/' + pendonor_id, function (data) {
-                //success data
-                console.log(data);
-                $('#nama').text(data.nama);
-                $('#modal-detail').modal('show');
-            }) 
-        });
-    </script>
+    @include('v_dashboard.pendonor.modal.show')
 
 @endsection
