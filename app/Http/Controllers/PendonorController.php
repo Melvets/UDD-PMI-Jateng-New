@@ -64,9 +64,14 @@ class PendonorController extends Controller
         return redirect('/dashboard/pendonor')->with('success', 'Data berhasil dibuat!');
     }
 
-    public function show(Pendonor $pendonor)
+    public function show($id)
     {
-        //
+        // return view('v_dashboard.pendonor.modal.show', [
+        //     'dataPendonor' => $pendonor
+        // ]);
+
+        $dataPendonor = Pendonor::findOrFail($id);
+        return response()->json($dataPendonor);
     }
 
     public function edit($id)
@@ -80,11 +85,32 @@ class PendonorController extends Controller
 
     public function update(Request $request, Pendonor $pendonor)
     {
-        //
+        $validateData = $request->validate([
+            'no_piagam' => 'required',
+            'nama' => 'required',
+            'alamat' => 'required',
+            'tempat_lahir' => 'required',
+            'tanggal_lahir' => 'required',
+            'agama' => 'required',
+            'jk' => 'required',
+            'no_ktp' => 'required',
+            'no_telepon' => 'required',
+            'pekerjaan' => 'required',
+            'golda' => 'required',
+            'jumlah_donasi' => 'required',
+            'donor_pertama' => 'required',
+            'piagam_ke' => 'required',
+            'tanggal_piagam' => 'required',
+        ]);
+
+        Pendonor::where('id', $pendonor->id)->update($validateData);
+        return redirect('/dashboard/pendonor')->with('success', 'Data berhasil diupdate!');
     }
 
     public function destroy(Pendonor $pendonor)
     {
-        //
+        Pendonor::destroy($pendonor->id);
+
+        return redirect('/dashboard/pendonor')->with('success', 'Data berhasil dihapus!');
     }
 }

@@ -106,4 +106,8 @@ User:
 
 catatan
 create edit jadwal mu revisi kabkot 
+stokdarah user create edit error
+
 database pendonor validate dibenerin
+pendonor show pecah-pecahin
+pendonor show design

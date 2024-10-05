@@ -113,9 +113,8 @@
                                                     <a href="{{ route('pendonor.edit', $data->id) }}"
                                                         class="btn btn-default text-green btn-md shadow rounded-2 p-2"
                                                         title="update"><i class="fas fa-pen"></i></a>
-                                                    <a href="{{ route('pendonor.show', $data->id) }}"
-                                                        class="btn btn-default text-warning btn-md shadow rounded-2 p-2"
-                                                        title="view"><i class="fas fa-eye"></i></a>
+                                                    <a class="btn btn-default text-warning btn-md shadow rounded-2 p-2 modal-detail"
+                                                        title="view" data-id="{{ $data->id }}"><i class="fas fa-eye"></i></a>
                                                     <form action="{{ route('pendonor.destroy', $data->id) }}" method="POST">
 
                                                         @csrf
@@ -147,4 +146,37 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="modal-detail" tabindex="-1" aria-labelledby="modal-detail" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p id="nama"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).on('click','.modal-detail',function(){
+            var url = "/dashboard/pendonor";
+            var pendonor_id = $(this).data('id');
+            $.get(url + '/' + pendonor_id, function (data) {
+                //success data
+                console.log(data);
+                $('#nama').text(data.nama);
+                $('#modal-detail').modal('show');
+            }) 
+        });
+    </script>
+
 @endsection
