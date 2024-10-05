@@ -6,6 +6,7 @@ use App\Models\AlamatUDD;
 use App\Models\Pendonor;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class PendonorController extends Controller
 {
@@ -34,24 +35,29 @@ class PendonorController extends Controller
 
     public function store(Request $request)
     {
-        // dd($request->all());
+        // Ubah input menjadi title case
+        $request->merge([
+            'nama' => Str::title($request->input('nama')),
+            'agama' => Str::title($request->input('agama')),
+            'pekerjaan' => Str::title($request->input('pekerjaan')),
+        ]);
 
         $validateData = $request->validate([
             'no_piagam' => 'required',
-            'nama' => 'required',
+            'nama' => 'required|string',
             'alamat' => 'required',
             'tempat_lahir' => 'required',
-            'tanggal_lahir' => 'required',
-            'agama' => 'required',
+            'tanggal_lahir' => 'required|date',
+            'agama' => 'required|string|max:20',
             'jk' => 'required',
-            'no_ktp' => 'required',
-            'no_telepon' => 'required',
+            'no_ktp' => 'required|digits:16',
+            'no_telepon' => 'required|max:15|min:10',
             'pekerjaan' => 'required',
             'golda' => 'required',
-            'jumlah_donasi' => 'required',
-            'donor_pertama' => 'required',
-            'piagam_ke' => 'required',
-            'tanggal_piagam' => 'required',
+            'jumlah_donasi' => 'required|numeric',
+            'donor_pertama' => 'required|date',
+            'piagam_ke' => 'required|numeric',
+            'tanggal_piagam' => 'required|date',
         ]);
 
         // dd(auth()->user()->id);
@@ -66,10 +72,6 @@ class PendonorController extends Controller
 
     public function show($id)
     {
-        // return view('v_dashboard.pendonor.modal.show', [
-        //     'dataPendonor' => $pendonor
-        // ]);
-
         $dataPendonor = Pendonor::findOrFail($id);
         return response()->json($dataPendonor);
     }
@@ -85,22 +87,29 @@ class PendonorController extends Controller
 
     public function update(Request $request, Pendonor $pendonor)
     {
+        // Ubah input menjadi title case
+        $request->merge([
+            'nama' => Str::title($request->input('nama')),
+            'agama' => Str::title($request->input('agama')),
+            'pekerjaan' => Str::title($request->input('pekerjaan')),
+        ]);
+
         $validateData = $request->validate([
             'no_piagam' => 'required',
-            'nama' => 'required',
+            'nama' => 'required|string',
             'alamat' => 'required',
             'tempat_lahir' => 'required',
-            'tanggal_lahir' => 'required',
-            'agama' => 'required',
+            'tanggal_lahir' => 'required|date',
+            'agama' => 'required|string|max:20',
             'jk' => 'required',
-            'no_ktp' => 'required',
-            'no_telepon' => 'required',
+            'no_ktp' => 'required|digits:16',
+            'no_telepon' => 'required|max:15|min:10',
             'pekerjaan' => 'required',
             'golda' => 'required',
-            'jumlah_donasi' => 'required',
-            'donor_pertama' => 'required',
-            'piagam_ke' => 'required',
-            'tanggal_piagam' => 'required',
+            'jumlah_donasi' => 'required|numeric',
+            'donor_pertama' => 'required|date',
+            'piagam_ke' => 'required|numeric',
+            'tanggal_piagam' => 'required|date',
         ]);
 
         Pendonor::where('id', $pendonor->id)->update($validateData);
