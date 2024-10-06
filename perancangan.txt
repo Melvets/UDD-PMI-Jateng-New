@@ -112,6 +112,7 @@ database pendonor validate dibenerin ()
 	- agama () dropdown
 	- pekerjaan () dropdown
 pendonor show design
+ganti kolom pekerjaan menjadi pekerjaan_id
 
 + tabel baruuuuuuuuuuuu = pekerjaan
 	- button di create dan edit pendonor

@@ -21,4 +21,9 @@ class Pendonor extends Model
     {
         return $this->belongsTo(User::class, 'user_id', 'id');
     }
+
+    public function Pekerjaan()
+    {
+        return $this->belongsTo(Pekerjaan::class, 'pekerjaan_id', 'id');
+    }
 }
