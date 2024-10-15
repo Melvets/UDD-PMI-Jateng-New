@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pekerjaan;
 use Illuminate\Http\Request;
 
 class PekerjaanController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $dataPekerjaan = $query->paginate(5);
+
+        return view('v_dashboard.pendonor.pekerjaan.index', [
+            'dataPekerjaan' => $dataPekerjaan
+        ]);
     }
 
     /**

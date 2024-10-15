@@ -178,9 +178,15 @@
                                     <div class="mb-3 row">
                                         <label for="agama" class="col-3 col-form-label required">Agama</label>
                                         <div class="col">
-                                            <input type="text" name="agama" id="agama"
-                                                class="form-control @error('agama') is-invalid @enderror"
-                                                placeholder="Wajib diisi ..." required value="{{ old('agama') }}">
+                                            <select class="form-select" id="agama" name="agama">
+                                                <option selected value="">--Pilih Agama--</option>
+                                                <option value="Islam">Islam</option>
+                                                <option value="Kristen">Kristen</option>
+                                                <option value="Katolik">Katolik</option>
+                                                <option value="Hindu">Hindu</option>
+                                                <option value="Budha">Budha</option>
+                                                <option value="Khonghucu">Khonghucu</option>
+                                            </select>
                                             @error('agama')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
@@ -240,15 +246,17 @@
                                     {{-- Pekerjaann --}}
                                     <div class="mb-3 row">
                                         <label for="pekerjaan" class="col-3 col-form-label required">Pekerjaan</label>
-                                        <div class="col">
-                                            <input type="text" name="pekerjaan" id="pekerjaan"
-                                                class="form-control @error('pekerjaan') is-invalid @enderror"
-                                                placeholder="Wajib diisi ..." required value="{{ old('pekerjaan') }}">
+                                        <div class="col input-group">
+                                            <select class="form-select" id="pekerjaan" name="pekerjaan">
+                                                <option selected value="">--Pilih Pekerjaan--</option>
+                                                {{-- Foreach --}}
+                                            </select>
                                             @error('pekerjaan')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
                                                 </div>
                                             @enderror
+                                            <a href="/dashboard/pekerjaan" class="btn btn-outline-danger">Tambah Pekerjaan</a>
                                         </div>
                                     </div>
 

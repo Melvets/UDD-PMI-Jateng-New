@@ -6,6 +6,7 @@ use App\Http\Controllers\RegistrasiController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\JadwalMUController;
 use App\Http\Controllers\LandingController;
+use App\Http\Controllers\PekerjaanController;
 use App\Http\Controllers\PendonorController;
 use App\Http\Controllers\StokDarahController;
 use App\Http\Controllers\UsersController;
@@ -44,6 +45,7 @@ Route::resource('/dashboard/stokdarah', StokDarahController::class)->middleware(
 Route::resource('/dashboard/jadwalmu', JadwalMUController::class)->middleware('auth');
 Route::resource('/dashboard/users', UsersController::class)->middleware('admin');
 Route::resource('/dashboard/pendonor', PendonorController::class)->middleware('auth');
+Route::resource('/dashboard/pekerjaan', PekerjaanController::class)->middleware('auth');
 
 Route::get('/dashboard/catatan', function() {
     return view('v_dashboard.catatan.index');

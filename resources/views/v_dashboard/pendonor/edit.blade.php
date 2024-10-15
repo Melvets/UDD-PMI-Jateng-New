@@ -181,9 +181,18 @@
                                     <div class="mb-3 row">
                                         <label for="agama" class="col-3 col-form-label required">Agama</label>
                                         <div class="col">
-                                            <input type="text" name="agama" id="agama"
-                                                class="form-control @error('agama') is-invalid @enderror"
-                                                placeholder="Wajib diisi ..." required value="{{ old('agama', $dataPendonor->agama) }}">
+                                            <select class="form-select @error('agama') is-invalid @enderror" id="agama" name="agama">
+                                                <option value="">--Pilih Golongan Darah--</option>
+                                                @if (old('agama', $dataPendonor->agama))
+                                                    <option selected value="{{ $dataPendonor->agama }}">{{ $dataPendonor->agama }}</option>
+                                                @endif
+                                                    <option value="Islam">Islam</option>
+                                                    <option value="Kristen">Kristen</option>
+                                                    <option value="Katolik">Katolik</option>
+                                                    <option value="Hindu">Hindu</option>
+                                                    <option value="Budha">Budha</option>
+                                                    <option value="Khonghucu">Khonghucu</option>
+                                            </select>
                                             @error('agama')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
