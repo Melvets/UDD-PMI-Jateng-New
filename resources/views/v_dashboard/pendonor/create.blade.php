@@ -256,7 +256,7 @@
                                                     {{ $message }}
                                                 </div>
                                             @enderror
-                                            <a href="/dashboard/pekerjaan" class="btn btn-outline-danger">Tambah Pekerjaan</a>
+                                            <a href="{{ route('pekerjaan.index') }}" class="btn btn-outline-danger">Tambah Pekerjaan</a>
                                         </div>
                                     </div>
 

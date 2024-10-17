@@ -45,7 +45,7 @@ Route::resource('/dashboard/stokdarah', StokDarahController::class)->middleware(
 Route::resource('/dashboard/jadwalmu', JadwalMUController::class)->middleware('auth');
 Route::resource('/dashboard/users', UsersController::class)->middleware('admin');
 Route::resource('/dashboard/pendonor', PendonorController::class)->middleware('auth');
-Route::resource('/dashboard/pekerjaan', PekerjaanController::class)->middleware('auth');
+Route::resource('/dashboard/pekerjaan', PekerjaanController::class)->name('pekerjaan')->middleware('auth');
 
 Route::get('/dashboard/catatan', function() {
     return view('v_dashboard.catatan.index');
