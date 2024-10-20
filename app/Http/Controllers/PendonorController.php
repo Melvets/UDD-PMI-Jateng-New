@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\AlamatUDD;
+use App\Models\Pekerjaan;
 use App\Models\Pendonor;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -30,6 +31,7 @@ class PendonorController extends Controller
         return view('v_dashboard.pendonor.create', [
             'dataUsers' => User::all(),
             'dataAlamatUDD' => AlamatUDD::all(),
+            'dataPekerjaan' => Pekerjaan::all(),
         ]);
     }
 
