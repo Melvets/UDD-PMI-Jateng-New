@@ -8,8 +8,10 @@ use App\Http\Controllers\JadwalMUController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\PekerjaanController;
 use App\Http\Controllers\PendonorController;
+use App\Http\Controllers\PendonorExportController;
 use App\Http\Controllers\StokDarahController;
 use App\Http\Controllers\UsersController;
+use App\Models\Pendonor;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -46,6 +48,7 @@ Route::resource('/dashboard/jadwalmu', JadwalMUController::class)->middleware('a
 Route::resource('/dashboard/users', UsersController::class)->middleware('admin');
 Route::resource('/dashboard/pendonor', PendonorController::class)->middleware('auth');
 Route::resource('/dashboard/pekerjaan', PekerjaanController::class)->middleware('auth');
+Route::get('/dashboard/pendonor/export', [PendonorExportController::class, 'export'])->name('pendonor.export');
 
 Route::get('/dashboard/catatan', function() {
     return view('v_dashboard.catatan.index');

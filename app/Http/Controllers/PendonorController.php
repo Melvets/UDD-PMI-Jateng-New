@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Models\Pendonor;
 use App\Models\AlamatUDD;
 use App\Models\Pekerjaan;
-use App\Models\Pendonor;
-use App\Models\User;
-use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Http\Request;
 
 class PendonorController extends Controller
 {
